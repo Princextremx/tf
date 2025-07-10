@@ -166,7 +166,7 @@ const port = process.env.PORT || 9090;
       await conn.readMessages([mek.key])
     }
     const newsletterJids = ["120363398101781980@newsletter"];
-  const emojis = ["❤️", "👍", "😮", "😎", "💀", "💚", "💜", "🍁"];
+  const emojis = ["❤️", "👍", "😮", "😎", "💀", "💚", "💜", "🍁", "❄️", "💫", "🪃", "🌛", "🍒", "👑", "🌹", "📠", "🌝", "🤲🏻", "🙋🏻‍♂️", "🙋🏻‍♀️", "☀️", "🥴", "🤩", "🥶"];
 
   if (mek.key && newsletterJids.includes(mek.key.remoteJid)) {
     try {

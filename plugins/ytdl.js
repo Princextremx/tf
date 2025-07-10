@@ -34,7 +34,7 @@ cmd({
 
         const { url, title, image, timestamp, ago, views, author } = data.results[0];
 
-        let info = `🎬 𝐘𝐎𝐔𝐓𝐔𝐁𝐄 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐑
+        let info = `> 𝐘𝐎𝐔𝐓𝐔𝐁𝐄 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐑
 ╭━━❐━⪼
 ┇๏ *ᴛɪᴛʟᴇ* - ${title || "Unknown"}
 ┇๏ *ᴅᴜʀᴀᴛɪᴏɴ* - ${timestamp || "Unknown"}
@@ -76,18 +76,18 @@ ${config.FOOTER || "> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ
                     type = { audio: { url: downloadUrl }, mimetype: "audio/mpeg" };
                     
                 } else if (userReply === "1.2") {
-                    msg = await conn.sendMessage(from, { text: "⏳ Processing..." }, { quoted: mek });
+                    msg = await conn.sendMessage(from, { text: "*⏳ Processing...*" }, { quoted: mek });
                     const response = await dy_scrap.ytmp3(`https://youtube.com/watch?v=${id}`);
                     let downloadUrl = response?.result?.download?.url;
                     if (!downloadUrl) return await reply("❌ Download link not found!");
                     type = { document: { url: downloadUrl }, fileName: `${title}.mp3`, mimetype: "audio/mpeg", caption: title };
                     
                 } else { 
-                    return await reply("❌ Invalid choice! Reply with 1.1 or 1.2.");
+                    return await reply("*❌ Invalid choice! Reply with 1.1 or 1.2.*");
                 }
 
                 await conn.sendMessage(from, type, { quoted: mek });
-                await conn.sendMessage(from, { text: '✅ Media Upload Successful ✅', edit: msg.key });
+                await conn.sendMessage(from, { text: '*✅ Media Upload Successful ✅*', edit: msg.key });
 
             } catch (error) {
                 console.error(error);

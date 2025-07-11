@@ -7,7 +7,7 @@ const { ytsearch } = require('@dark-yasiya/yt-dl.js');
 cmd({ 
     pattern: "mp4", 
     alias: ["video"], 
-    react: "🎥", 
+    react: "💫", 
     desc: "Download YouTube video", 
     category: "main", 
     use: '.mp4 < Yt url or Name >', 
@@ -29,13 +29,15 @@ cmd({
             return reply("Failed to fetch the video. Please try again later.");
         }
 
-        let ytmsg = `📹 *Video Downloader*
-🎬 *Title:* ${yts.title}
-⏳ *Duration:* ${yts.timestamp}
-👀 *Views:* ${yts.views}
-👤 *Author:* ${yts.author.name}
-🔗 *Link:* ${yts.url}
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM-CM* ❤️`;
+        let ytmsg = `╭٭━━━━━━➤ 𝐘𝐓 𝐕𝐈𝐃𝐄𝐎
+┃📹 *ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*
+┃🎬 *ᴛɪᴛʟᴇ:* ${yts.title}
+┃⏳ *ᴅᴜʀᴀᴛɪᴏɴ:* ${yts.timestamp}
+┃👀 *ᴠɪᴇᴡs:* ${yts.views}
+┃👤 *ᴀᴜᴛʜᴏʀ:* ${yts.author.name}
+┃🔗 *ʟɪɴᴋ:* ${yts.url}
+╰٭━━━━━━━━━━━━━━━━━━٭━➤
+> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         // Send video directly with caption
         await conn.sendMessage(

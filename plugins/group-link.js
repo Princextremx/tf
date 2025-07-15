@@ -10,7 +10,7 @@ cmd({
     alias: ["link", "invite", "grouplink", "satan-link"],
     desc: "Get group invite link.",
     category: "group",
-    react: "🖇️",
+    react: "🙋🏻‍♂️",
     filename: __filename,
 }, async (conn, mek, m, { from, quoted, body, args, q, isGroup, sender, reply }) => {
     try {
@@ -37,13 +37,14 @@ cmd({
         const groupId = groupMetadata.id || from;
         const memberCount = groupMetadata.participants.length;
 
-        const infoText = `╭╼━━━⦉ *ɢʀᴏᴜᴘ ʟɪɴᴋ* ⦊━━━╾╮
-┃ *♣︎ɴᴀᴍᴇ:* ${groupName}
-┃ *♣︎ᴏᴡɴᴇʀ:* ${groupOwner}
-┃ *♣︎ɢʀᴏᴜᴘ ɪᴅ:* ${groupId}
-┃ *♣︎ʟɪɴᴋ ɢʀᴏᴜᴘ:* ${inviteLink}
-┃ *♣︎ᴍᴇɴᴍʙᴇʀs:* #${memberCount}
-╰╼━━━━━━━━━━━━━━━━╾╯
+        const infoText = `╭⭑━━➤ *\`𝐆 𝐋𝐈𝐍𝐊\`*
+┃ *ᴘʀᴏᴘʀɪᴏ* *\`ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ\`*
+┃ *ᴍᴇᴍʙᴇʀs* *#${memberCount}*
+┃ *ᴏᴡɴᴇʀ* ${groupOwner}
+┃ *ɢ ɴᴀᴍᴇ* ${groupName}
+┃ *ɢʀᴏᴜᴘ ɪᴅ* ${groupId}
+┃ *ɢ ʟɪɴᴋ* ${inviteLink}
+╰━━━━━━━━━━━━━━━━⬣
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
 
         let ppUrl;

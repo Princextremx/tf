@@ -37,14 +37,15 @@ async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAd
         let message = body.slice(body.indexOf(command) + command.length).trim();
         if (!message) message = "ʜᴇʟʟᴏ ᴇᴠᴇʀʏᴏɴᴇ"; // Default message
 
-        let teks = `*╭╼━━━━⧼ᴍᴇɴᴛɪᴏɴs⧽━━━━╾╮*
+        let teks = `
+*╭╼━━⧼𝐗𝐓𝐑𝐄𝐌𝐄 𝐗𝐌𝐃⧽━━╾╮*
 *│👥ɢʀᴏᴜᴘ: ${groupName}*
 *│🎰ᴍᴇᴍʙᴇʀs: ${totalMembers}*
 *│📝ᴍᴇssᴀɢᴇ: ${message}*
 *│🛡️ᴀᴅᴍɪɴs: ɴᴏᴛ ᴅᴇғɪɴᴇᴅ*
 *╰╼━━━━━━━━━━━━━━━━╾╯*
 
-*╭╼┉┉┉┉〔ᴛᴀɢᴀʟʟs〕┉┉┉┉╮*
+*╭━━━━⪼ 𝐓𝐀𝐆𝐀𝐋𝐋 ⪻━━━━╮*
 `;
 
         for (let mem of participants) {
@@ -52,7 +53,7 @@ async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAd
             teks += `${randomEmoji} @${mem.id.split('@')[0]}\n`;
         }
 
-        teks += "*└╼┉┉┉✪ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗 ✪┉┉┉*";
+        teks += "*└━━━━✪ 𝗫𝗧𝗥𝗘𝗠𝗘 𝗫𝗠𝗗 ✪━━━━*";
 
         conn.sendMessage(from, { text: teks, mentions: participants.map(a => a.id) }, { quoted: mek });
  

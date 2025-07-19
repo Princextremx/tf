@@ -40,7 +40,7 @@ cmd({
         const uniqueOwners = [...new Set(owners)];
         fs.writeFileSync(OWNER_PATH, JSON.stringify(uniqueOwners, null, 2));
 
-        const successMsg = "_*✅ sᴜᴄᴄᴇssғᴜʟʟʏ ᴀᴅᴅᴇᴅ ᴜsᴇʀ ᴀs ᴛᴇᴍᴘᴏʀᴀʀʏ ᴏᴡɴᴇʀ_*";
+        const successMsg = "*_✅ sᴜᴄᴄᴇssғᴜʟʟʏ ᴀᴅᴅᴇᴅ ᴜsᴇʀ ᴀs ᴛᴇᴍᴘᴏʀᴀʀʏ ᴏᴡɴᴇʀ_*";
         await conn.sendMessage(from, {
             image: { url: "https://files.catbox.moe/1rioah.jpg" },
             caption: successMsg

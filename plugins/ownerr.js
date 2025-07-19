@@ -108,7 +108,7 @@ cmd({
             return reply("_*❌ ɴᴏ ᴛᴇᴍᴘᴏʀᴀʀʏ ᴏᴡɴᴇʀs ғᴏᴜɴᴅ*_");
         }
 
-        let listMessage = "`*_🤴 ʟɪsᴛ ᴏғ sᴜᴅᴏ ᴏᴡɴᴇʀs:_*`\n\n";
+        let listMessage = "*_🤴 ʟɪsᴛ ᴏғ sᴜᴅᴏ ᴏᴡɴᴇʀs:_*\n\n";
         owners.forEach((owner, i) => {
             listMessage += `${i + 1}. ${owner.replace("@s.whatsapp.net", "")}\n`;
         });

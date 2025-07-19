@@ -6,7 +6,6 @@ cmd({
   alias: ["dmtall"],
   desc: "Demote all group admins (except bot, owner, sudo).",
   category: "group",
-  react: "❄️",
   filename: __filename
 }, async (conn, m, msg) => {
   try {

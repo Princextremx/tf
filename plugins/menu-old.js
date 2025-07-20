@@ -53,7 +53,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
@@ -72,7 +72,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363398101781980@newsletter',
+                    newsletterJid: '120363418161689316@newsletter',
                     newsletterName:'𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                     serverMessageId: 143
                 }
@@ -142,7 +142,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: "𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗",
                         serverMessageId: 143
                     }
@@ -208,7 +208,7 @@ async (conn, mek, m, { from, quoted, reply }) => {
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 144
                     }
@@ -275,7 +275,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
@@ -350,7 +350,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
@@ -404,7 +404,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
@@ -466,7 +466,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
@@ -524,7 +524,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
@@ -585,7 +585,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
@@ -648,7 +648,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
@@ -713,7 +713,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                         serverMessageId: 143
                     }
@@ -766,7 +766,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363398101781980@newsletter',
+                        newsletterJid: '120363418161689316@newsletter',
                         newsletterName: '𝗛𝗔𝗜𝗞𝗢-𝗫𝗠𝗗-𝗩𝟮',
                         serverMessageId: 143
                     }

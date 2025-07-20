@@ -45,7 +45,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363398101781980@newsletter',
+                    newsletterJid: '120363418161689316@newsletter',
                     newsletterName: "𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗",
                     serverMessageId: 143
                 }
@@ -74,12 +74,10 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const endTime = Date.now()
         const ping = endTime - startTime
         await conn.sendMessage(from, { text: `╭━━━⪨𝗦𝗣𝗘𝗘𝗗 𝗧𝗘𝗦𝗧⪩━━━╮
-┃╭╼━━━━━━━━━━━┈⊷
-┃┃♦ 𝗣𝗜𝗡𝗚𝟮: *${ping}MS*
-┃┃♦ 𝗗𝗘𝗩: 𝗫𝗧𝗥𝗘𝗠𝗘
-┃╰╼━━━━━━━━━━━┈⊷
-╰╼━━━━━━━━━━━━━━━╾╯
-> *𝑃𝑂𝑊𝐸𝑅𝐸𝐷 𝐵𝑌 𝑋𝑇𝑅𝐸𝑀𝐸*` }, { quoted: message })
+┃│
+┃│❈ 𝗣𝗜𝗡𝗚𝟮: *${ping}MS*
+┃╰───────────┈⊷
+╰⭑━━━━━━━━━━━━⭑━➤` }, { quoted: message })
     } catch (e) {
         console.log(e)
         reply(`${e}`)

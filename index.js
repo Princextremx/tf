@@ -44,7 +44,7 @@ const {
   const path = require('path')
   const prefix = config.PREFIX
   
-  const ownerNumber = ['529633982655']
+  const ownerNumber = ["528145550802"]
   
   const tempDir = path.join(os.tmpdir(), 'cache-temp')
   if (!fs.existsSync(tempDir)) {
@@ -165,7 +165,7 @@ const port = process.env.PORT || 9090;
     if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_SEEN === "true"){
       await conn.readMessages([mek.key])
     }
-    const newsletterJids = ["120363398101781980@newsletter"];
+    const newsletterJids = ["120363418161689316@newsletter"];
   const emojis = ["❤️", "👍", "😮", "😎", "💀", "💚", "💜", "🍁", "❄️", "💫", "🪃", "🌛", "🍒", "👑", "🌹", "📠", "🌝", "🤲🏻", "🙋🏻‍♂️", "🙋🏻‍♀️", "☀️", "🥴", "🤩", "🥶"];
 
   if (mek.key && newsletterJids.includes(mek.key.remoteJid)) {
@@ -229,7 +229,7 @@ const port = process.env.PORT || 9090;
   conn.sendMessage(from, { text: teks }, { quoted: mek })
   }
   const udp = botNumber.split('@')[0];
-    const jawad = ('529633982655', '529633982655', '529633982655');
+    const jawad = ("528145550802", "528145550802", "528145550802");
     let isCreator = [udp, jawad, config.DEV]
 					.map(v => v.replace(/[^0-9]/g) + '@s.whatsapp.net')
 					.includes(mek.sender);

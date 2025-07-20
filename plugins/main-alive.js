@@ -33,7 +33,7 @@ async (conn, mek, m, { from, sender, reply }) => {
                 forwardingScore: 1000,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363398101781980@newsletter',
+                    newsletterJid: '120363418161689316@newsletter',
                     newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
                     serverMessageId: 143
                 }

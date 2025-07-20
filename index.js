@@ -113,20 +113,11 @@ const port = process.env.PORT || 9090;
   console.log('Plugins installed successful ✅')
   console.log('XTREME-XMD CONNECTED SUCCESSFULLY ✅')
   
-  let up = `╭──⧼⧼ 🤖 *xᴛʀᴇᴍᴇ xᴍᴅ ᴠ1* ⧽⧽
-├─▸ *ᴜʟᴛʀᴀ sᴜᴘᴇʀ ғᴀsᴛ ᴘᴏᴡᴇʀғᴜʟʟ ⚠️*  
-│     *ʙᴇsᴛ ʙᴏᴛ xᴛʀᴇᴍᴇ xᴍᴅ* 
-╰─➤ *ʏᴏᴜʀ sᴍᴀʀᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ɪs ʀᴇᴀᴅʏ ᴛᴏ ᴜsᴇ 🍁!*  *ᴀᴅᴅ ᴄᴏᴍᴍᴇɴᴛᴍᴏʀᴇ ᴀᴄᴛɪᴏɴs*
-
-- *❄️ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴄʜᴏᴏsɪɴɢ xᴛʀᴇᴍᴇ xᴍᴅ!* 
-
-╭──⧼⧼ 🔗 *ɪɴғᴏʀᴍᴀᴛɪᴏɴ* ⧽⧽  
-├─ 🧩 *ᴘʀᴇғɪx:* = ${prefix}
-├─ 📢 *ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ:*  
-│      https://whatsapp.com/channel/0029Vb9qyTY47XeJ7i0wcQ40
-├─ 🌟 *sᴛᴀʀ ᴛʜᴇ ʀᴇᴘᴏ:*
-│    https://github.com/PrinceXtremeX/XTREME-XMD
-╰─⭑━━➤🚀 
+  let up = `╭━━➤ 𝗕𝗢𝗧 𝗖𝗢𝗡𝗡𝗘𝗖𝗧
+┃ ❈ *ᴅᴇᴠ:* *\ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ\*
+┃❈  *ʏᴏᴜʀ ᴘʀᴇғɪx:* *\${prefix}\*
+┃❈  *sᴜᴘᴘᴏʀᴛ:* +528145550802
+╰━━━━━━━━━━━━━━➤
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`;
     conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/ee7do3.jpg` }, caption: up })
   }

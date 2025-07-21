@@ -35,17 +35,16 @@ async (conn, mek, m, { from, reply }) => {
 
         const repoData = await response.json();
 
-        const message = `> ╭⭑━━➤ *XTREME-XMD REPO*
-> ┇╭────────────┈⊷
-> ┇┃♢ *ʀᴇᴘᴏsɪᴛᴏʀʏ*: ${repoData.name}
-> ┇┃♢ *ᴏᴡɴᴇʀ*: ${repoData.owner.login}
-> ┇┃♢ *sᴛᴀʀs*: ${repoData.stargazers_count}
-> ┇┃♢ *ғᴏʀᴋs*: ${repoData.forks_count}
-> ┇┃♢ *ᴜʀʟ*: ${repoData.html_url}
-> ┇┃♢ *ᴅᴇsᴄʀɪᴘᴛɪᴏɴ*:
-> ┇┃${repoData.description || 'ɴᴏ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ'}
-> ┇╰───────────┈⊷
-> ╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╍╯
+        const message = `> ╭⭑──➤ *XTREME-XMD REPO*
+> │♢ *ʀᴇᴘᴏsɪᴛᴏʀʏ*: ${repoData.name}
+> │♢ *ᴏᴡɴᴇʀ*: ${repoData.owner.login}
+> │♢ *sᴛᴀʀs*: ${repoData.stargazers_count}
+> │♢ *ғᴏʀᴋs*: ${repoData.forks_count}
+> │♢ *ᴜʀʟ*: ${repoData.html_url}
+> │♢ *ᴛᴜᴛᴏ*: https://www.youtube.com/@DEV_PRINCE_XTREME
+> │♢ *ᴅᴇsᴄʀɪᴘᴛɪᴏɴ*:
+> │${repoData.description || 'ɴᴏ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ'}
+> ╰──────────────────⊷
 > ${config.DESCRIPTION}`;
 
         await conn.sendMessage(from, {

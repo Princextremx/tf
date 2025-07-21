@@ -9,7 +9,7 @@ cmd({
     alias: ["runtime", "run"],
     desc: "Show bot uptime with stylish formats",
     category: "main",
-    react: "⏱️",
+    react: "🎐",
     filename: __filename
 },
 async (conn, mek, m, { from, reply, args }) => {
@@ -96,7 +96,7 @@ async (conn, mek, m, { from, reply, args }) => {
         }
 
         await conn.sendMessage(from, {
-            image: { url: 'https://files.catbox.moe/jciyt1.jpg' },
+            image: { url: 'https://files.catbox.moe/vz98kd.jpg' },
             caption: selectedStyle,
             contextInfo: {
                 mentionedJid: [m.sender],

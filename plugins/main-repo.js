@@ -35,7 +35,7 @@ async (conn, mek, m, { from, reply }) => {
 
         const repoData = await response.json();
 
-        const message = `> ╭⭑──➤ *XTREME-XMD REPO*
+        const message = `> ╭⭑──➤ *BOT REPO*
 > │♢ *ʀᴇᴘᴏsɪᴛᴏʀʏ*: ${repoData.name}
 > │♢ *ᴏᴡɴᴇʀ*: ${repoData.owner.login}
 > │♢ *sᴛᴀʀs*: ${repoData.stargazers_count}
@@ -44,7 +44,7 @@ async (conn, mek, m, { from, reply }) => {
 > │♢ *ᴛᴜᴛᴏ*: https://www.youtube.com/@DEV_PRINCE_XTREME
 > │♢ *ᴅᴇsᴄʀɪᴘᴛɪᴏɴ*:
 > │${repoData.description || 'ɴᴏ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ'}
-> ╰────────────────⊷
+> ╰───────────────⊷
 > ${config.DESCRIPTION}`;
 
         await conn.sendMessage(from, {

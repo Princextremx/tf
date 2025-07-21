@@ -1,7 +1,7 @@
 const { cmd } = require('../command');
 
 cmd({
-  pattern: 'send',
+  pattern: 'give',
   desc: 'Réponse automatique stylée au mot "send"',
   category: 'auto',
   usePrefix: false,

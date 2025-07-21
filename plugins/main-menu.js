@@ -265,7 +265,7 @@ let TerraMenu = `╭⭑━━➤ 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗
 > *╰⭑━━➤* *ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*
 > *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`
 
-await conn.sendMessage(from,{image:{url:config.ALIVE_IMG},caption:TerraMenu,
+await conn.sendMessage(from,{image:{url:"https://files.catbox.moe/mry39g.jpg"},caption:TerraMenu,
                           contextInfo: {
     mentionedJid: [m.sender],
     forwardingScore: 999,

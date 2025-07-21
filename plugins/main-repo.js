@@ -44,7 +44,7 @@ async (conn, mek, m, { from, reply }) => {
 > │♢ *ᴛᴜᴛᴏ*: https://www.youtube.com/@DEV_PRINCE_XTREME
 > │♢ *ᴅᴇsᴄʀɪᴘᴛɪᴏɴ*:
 > │${repoData.description || 'ɴᴏ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ'}
-> ╰──────────────────⊷
+> ╰────────────────⊷
 > ${config.DESCRIPTION}`;
 
         await conn.sendMessage(from, {

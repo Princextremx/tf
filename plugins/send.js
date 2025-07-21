@@ -1,17 +1,37 @@
 const { cmd } = require('../command');
 
-// Ce type de commande réagit à un mot exact sans préfixe
 cmd({
-  pattern: 'Send',
-  desc: 'Répond automatiquement quand quelqu’un écrit "Send"',
+  pattern: 'send',
+  desc: 'Réponse automatique stylée au mot "send"',
   category: 'auto',
-  usePrefix: false, // Important : empêche l’utilisation du préfixe
-  react: '🎐',
+  usePrefix: false,
+  react: '✨',
   filename: __filename
 }, async (m, { sock }) => {
-  if (m.body?.trim().toLowerCase() === 'send') {
-    await sock.sendMessage(m.chat, {
-      text: '🎐 *ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛᴀᴛᴜs!*',
-    }, { quoted: m });
-  }
+  const triggers = ['send', 'status', 'give']; // mots déclencheurs
+  const msg = m.body?.trim().toLowerCase();
+
+  if (!triggers.includes(msg)) return;
+
+  // Animation de "chargement" avant réponse
+  await sock.sendMessage(m.chat, {
+    text: '🔄 Processing...',
+  }, { quoted: m });
+
+  // Petite pause avant la vraie réponse (style réaliste)
+  await new Promise(r => setTimeout(r, 1500));
+
+  // Message stylé
+  const message = `
+╭━━━〔 𝗥𝗘𝗤𝗨𝗘𝗦𝗧 𝗣𝗥𝗢𝗖𝗘𝗦𝗦𝗘𝗗 ✨ 〕━━━╮
+┃📩 *PLEASE REPLY TO A STATUS!*
+┃
+┃🕓 *Time:* ${new Date().toLocaleTimeString()}
+┃🔰 *Bot:* XTREME-MDX-V2
+╰━━━━━━━━━━━━━━━━━━━━━╯
+  `.trim();
+
+  await sock.sendMessage(m.chat, {
+    text: message,
+  }, { quoted: m });
 });

@@ -6,7 +6,7 @@ const axios = require('axios');
 const ytdl = require('ytdl-core');
 
 cmd({
-  pattern: "mp3",
+  pattern: "audio",
   desc: "Convertit une vidéo en audio MP3",
   category: "convertisseur",
   filename: __filename,

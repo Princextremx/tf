@@ -44,7 +44,7 @@ cmd({
     alias: ["kickadmins", "kickall3", "deladmins"],
     desc: "*ʀᴇᴍᴏᴠᴇ ᴀʟʟ ᴀᴅᴍɪɴ ᴍᴇᴍʙᴇʀs ғʀᴏᴍ ᴛʜᴇ ɢʀᴏᴜᴘ, ᴇxᴄʟᴜᴅɪɴɢ ᴛʜᴇ ʙᴏᴛ ᴀɴᴅ ʙᴏᴛ ᴏᴡɴᴇʀ*",
     react: "🚮",
-    category: "group",
+    category: "⛑️ group",
     filename: __filename,
 }, 
 async (conn, mek, m, {
@@ -85,7 +85,7 @@ cmd({
     alias: ["kickall2", "endgc2", "endgroup2"],
     desc: "Remove all members and admins from the group, excluding the bot and bot owner.",
     react: "📢",
-    category: "group",
+    category: "⛑️ group",
     filename: __filename,
 }, 
 async (conn, mek, m, {

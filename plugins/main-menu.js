@@ -2,7 +2,7 @@ const config = require('../config');
 const moment = require('moment-timezone');
 const { cmd, commands } = require('../command');
 const axios = require('axios');
-const stylizedChars ={
+const menuText ={
   "A": "ᴀ",
   "B": "ʙ",
   "C": "ᴄ",

@@ -11,16 +11,16 @@ cmd({
   category: "settings",
   filename: __filename
 }, async (conn, m, msg, { text }) => {
-  if (!text) return m.reply("*Use:* .anticall on | off");
+  if (!text) return m.reply("*ᴜsᴇ: .ᴀɴᴛɪᴄᴀʟʟ ᴏɴ | ᴏғғ*");
 
   if (text.toLowerCase() === "on") {
     antiCallEnabled = true;
-    m.reply("*✅ Anti-Call enabled.*");
+    m.reply("*✅ ᴀɴᴛɪ-ᴄᴀʟʟ ᴇɴᴀʙʟᴇᴅ*");
   } else if (text.toLowerCase() === "off") {
     antiCallEnabled = false;
-    m.reply("*❌ Anti-Call disabled.*");
+    m.reply("*❌ ᴀɴᴛɪ-ᴄᴀʟʟ ᴅɪsᴀʙʟᴇᴅ*");
   } else {
-    m.reply("*Use:* .anticall on | off");
+    m.reply("*ᴜsᴇ: .ᴀɴᴛɪᴄᴀʟʟ ᴏɴ | ᴏғғ*");
   }
 });
 
@@ -38,7 +38,7 @@ cmd({ on: "body" }, async (conn, m, msg, { from }) => {
 
           if (!call.isGroup) {
             await conn.sendMessage(call.from, {
-              text: "*📵 Call automatically rejected. The owner is currently busy.*",
+              text: "*📵 ᴄᴀʟʟ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ʀᴇᴊᴇᴄᴛᴇᴅ. ᴛʜᴇ ᴏᴡɴᴇʀ ɪs ᴄᴜʀʀᴇɴᴛʟʏ ʙᴜsʏ*",
               mentions: [call.from]
             });
           }

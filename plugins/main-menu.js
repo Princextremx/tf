@@ -2,6 +2,34 @@ const config = require('../config');
 const moment = require('moment-timezone');
 const { cmd, commands } = require('../command');
 const axios = require('axios');
+const stylizedChars ={
+  "A": "ᴀ",
+  "B": "ʙ",
+  "C": "ᴄ",
+  "D": "ᴅ",
+  "E": "ᴇ",
+  "F": "ꜰ",
+  "G": "ɢ",
+  "H": "ʜ",
+  "I": "ɪ",
+  "J": "ᴊ",
+  "K": "ᴋ",
+  "L": "ʟ",
+  "M": "ᴍ",
+  "N": "ɴ",
+  "O": "ᴏ",
+  "P": "ᴘ",
+  "Q": "ǫ",
+  "R": "ʀ",
+  "S": "s",
+  "T": "ᴛ",
+  "U": "ᴜ",
+  "V": "ᴠ",
+  "W": "ᴡ",
+  "X": "x",
+  "Y": "ʏ",
+  "Z": "ᴢ"
+}
 
 cmd({
   pattern: "menu",

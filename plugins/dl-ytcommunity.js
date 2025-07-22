@@ -5,7 +5,7 @@ cmd({
     pattern: "ytpost",
     alias: ["ytcommunity", "ytc"],
     desc: "Download a YouTube community post",
-    category: "download",
+    category: "downloader",
     react: "🎥",
     filename: __filename
 },

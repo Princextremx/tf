@@ -5,7 +5,7 @@ cmd({
     pattern: "define",
     desc: "📖 Get the definition of a word",
     react: "🔍",
-    category: "🔍search",
+    category: "search",
     filename: __filename
 },
 async (conn, mek, m, { from, q, reply }) => {

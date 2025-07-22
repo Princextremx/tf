@@ -8,7 +8,7 @@ cmd({
   pattern: "anticall",
   alias: ["callblock", "rejectcall"],
   desc: "Enable or disable auto call reject feature.",
-  category: "⚙️settings",
+  category: "settings",
   filename: __filename
 }, async (conn, m, msg, { text }) => {
   if (!text) return m.reply("*ᴜsᴇ: .ᴀɴᴛɪᴄᴀʟʟ ᴏɴ | ᴏғғ*");

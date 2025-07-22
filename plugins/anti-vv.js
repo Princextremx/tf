@@ -5,7 +5,7 @@ cmd({
   alias: ["viewonce", 'vv2'],
   react: '👀',
   desc: "Owner Only - retrieve quoted message back to user",
-  category: "🪀owner",
+  category: "owner",
   filename: __filename
 }, async (client, message, match, { from, isCreator }) => {
   try {

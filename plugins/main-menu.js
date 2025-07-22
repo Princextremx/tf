@@ -36,8 +36,6 @@ async (conn, mek, m, { from, reply }) => {
 *┃* ❃ *ᴠᴇʀsɪᴏɴs* : 1.0.0
 *╰────────────────❍*
 `;
-
-
     // Catégories et commandes
     let category = {};
     for (let cmd of commands) {

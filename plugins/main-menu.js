@@ -29,7 +29,7 @@ const stylizedChars ={
   "X": "x",
   "Y": "ʏ",
   "Z": "ᴢ"
-}
+};
 
 cmd({
   pattern: "menu",

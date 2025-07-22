@@ -1,23 +1,16 @@
-const config = require('../config')
-const {cmd , commands} = require('../command')
-const os = require("os")
-const {runtime} = require('../lib/functions')
-const axios = require('axios')
+const config = require('../config');
+const moment = require('moment-timezone');
+const { cmd, commands } = require('../command');
+const axios = require('axios');
 
 cmd({
-
-    pattern: "menu",
-
-    react: "❄️",
-
-    desc: "Get bot command list.",
-
-    category: "main",
-
-    use: '.menu',
-
-    filename: __filename
-
+  pattern: "menu",
+  alias: ["allmenu", "prince"],
+  use: '.menu',
+  desc: "Show all bot commands",
+  category: "menu",
+  react: "❄️",
+  filename: __filename
 },
 async (conn, mek, m, { from, reply }) => {
   try {
@@ -89,4 +82,3 @@ async (conn, mek, m, { from, reply }) => {
     reply(`❌ Error: ${e.message}`);
   }
 });
-        

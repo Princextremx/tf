@@ -26,8 +26,7 @@ async (conn, mek, m, { from, reply }) => {
     };
 
     // Menu principal
-    let menuText = `
-*╭━━*『 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗』
+    let menuText = `*╭━━*『 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗』
 *┃* ❃ *ᴜsᴇʀ* : @${m.sender.split("@")[0]}
 *┃* ❃ *ʀᴜɴᴛɪᴍᴇ* : ${uptime()}
 *┃* ❃ *ᴍᴏᴅᴇ* : ${config.MODE}

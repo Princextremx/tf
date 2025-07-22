@@ -40,9 +40,9 @@ async (conn, mek, m, { from, reply }) => {
 });
 
 cmd({
-    pattern: "🖥️ heart",
+    pattern: "heart",
     desc: "Displays a dynamic edit msg for fun.",
-    category: "tools",
+    category: "🖥️ tools",
     react: "❤️",
     filename: __filename
 },

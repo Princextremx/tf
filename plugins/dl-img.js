@@ -4,9 +4,9 @@ const axios = require("axios");
 cmd({
     pattern: "img",
     alias: ["image", "googleimage", "searchimg"],
-    react: "🦋",
+    react: "💫",
     desc: "Search and download Google images",
-    category: "🍥fun",
+    category: "fun",
     use: ".img <keywords>",
     filename: __filename
 }, async (conn, mek, m, { reply, args, from }) => {

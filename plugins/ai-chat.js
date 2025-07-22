@@ -5,7 +5,7 @@ cmd({
     pattern: "ai",
     alias: ["bot", "dj", "gpt", "gpt4", "bing"],
     desc: "Chat with an AI model",
-    category: "ai",
+    category: "🤖ai",
     react: "🤖",
     filename: __filename
 },

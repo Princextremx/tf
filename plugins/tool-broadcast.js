@@ -8,7 +8,7 @@ const path = require('path');
 
 cmd({
   pattern: "broadcast",
-  category: "⛑️ group",
+  category: "👑 owner",
   desc: "Bot makes a broadcast in all groups",
   filename: __filename,
   use: "<text for broadcast.>"

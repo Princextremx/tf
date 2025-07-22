@@ -6,7 +6,7 @@ const { Sticker, StickerTypes } = require("wa-sticker-formatter");
 cmd({
     pattern: "emix",
     desc: "Combine two emojis into a sticker.",
-    category: "🍥fun",
+    category: "fun",
     react: "😃",
     use: ".emix 😂,🙂",
     filename: __filename,

@@ -3,7 +3,7 @@ const { cmd } = require('../command');
 cmd({
     pattern: "happy",
     desc: "Displays a dynamic edit msg for fun.",
-    category: "tools",
+    category: "👨🏻‍💻tools",
     react: "😂",
     filename: __filename
 },

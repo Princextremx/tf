@@ -9,7 +9,7 @@ cmd({
     alias: ["runtime", "run"],
     desc: "Show bot uptime with stylish formats",
     category: "main",
-    react: "🎐",
+    react: "⌚",
     filename: __filename
 },
 async (conn, mek, m, { from, reply, args }) => {
@@ -20,66 +20,55 @@ async (conn, mek, m, { from, reply, args }) => {
         const version = pkg.version || "1.0.0";
 
         const styles = [
-`╭────『 *UPTIME* 』───╮
-│ ╭╌┈┈┈┈┈┄┄┈╌┈⊷
-│ ┆⏱️ ${uptime}
-│ ┆🧭 ${seconds} seconds
-│ ┆🚀 Started: ${startTime.toLocaleString()}
-│ ╰┄┄┄┄┄┄┄┄┄┄┈ ┈⊷
-╰────────────────╯
+`╭──『 *\`UPTIME\`* 』
+│ ⏱️ ${uptime}
+│ 🧭 ${seconds} seconds
+│ 🚀 Started: ${startTime.toLocaleString()}
+╰──────────────⭑─➤
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`,
 
-`╭╼═⧼𝗨𝗣𝗧𝗜𝗠𝗘 𝗦𝗧𝗔𝗧𝗨𝗦⧽═╾╮
-┃╭╼═══════════━┈⊷
-┃│♢ ʀᴜɴɴɪɴɢ: ${uptime}
-┃│♢ sᴇᴄᴏɴᴅs: ${seconds}
-┃│♢ sɪɴᴄᴇ: ${startTime.toLocaleDateString()}
-┃╰╼════════════┈⊷
-╰╼═══════════════╾╯
+`╭─ 「 *\`XTREME XMD\`* 」
+│♢ ʀᴜɴɴɪɴɢ: ${uptime}
+│♢ sᴇᴄᴏɴᴅs: ${seconds}
+│♢ sɪɴᴄᴇ: ${startTime.toLocaleDateString()}
+╰──────────────⭑─➤
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`,
 
-`╭╼━━━━━━━━━━━━━━╾╮
-│        *⟬ UPTIME STATUS ⟭*  
-│╭┅┅┅┅┅┅┅┅┅┅┅╍⊷
-││ • ᴛɪᴍᴇ: ${uptime}
-││ • sᴇᴄᴏɴᴅs: ${seconds}
-││ • sᴛᴀʀᴛᴇᴅ: ${startTime.toLocaleString()}
-│╰┅┅┅┅┅┅┅┅┅┅┅┈⊷
-╰╼━━━━━━━━━━━━━━╾╯
+`╭─ 「 *\`XTREME XMD\`* 」
+│ • ᴛɪᴍᴇ: ${uptime}
+│ • sᴇᴄᴏɴᴅs: ${seconds}
+│ • sᴛᴀʀᴛᴇᴅ: ${startTime.toLocaleString()}
+╰━━━━━━━━━━━━━━⭑━➤
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`,
 
-`╭╼┅⧼ 🅤🅟🅣🅘🅜🅔 ⧽┉╾╮
-┋ ⏳ ${uptime}
-┋ 🕰️ ${startTime.toLocaleString()}
-┋ 🔢 ${seconds} sᴇᴄᴏɴᴅs
-╰╼┉┅┉┅┉┅┉┅┉┅┉╍┅╾╯
+`╭─ 「 *\`XTREME XMD\`* 」
+│ ⏳ ${uptime}
+│ 🕰️ ${startTime.toLocaleString()}
+│ 🔢 ${seconds} sᴇᴄᴏɴᴅs
+╰──────────────⭑─➤
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`,
 
-`╭╼═══════════════╾╮
-║  *𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗*
-║  ʀᴜɴᴛɪᴍᴇ: ${uptime}
-║  sᴇᴄᴏɴᴅs:: ${seconds}
-║  sɪɴᴄᴇʀᴇʟʏ: ${startTime.toLocaleString()}
-╰════════════════╾╯
+`
+╭─ 「 *\`XTREME XMD\`* 」
+│  ʀᴜɴᴛɪᴍᴇ: ${uptime}
+│  sᴇᴄᴏɴᴅs:: ${seconds}
+│  sɪɴᴄᴇʀᴇʟʏ: ${startTime.toLocaleString()}
+╰━━━━━━━━━━━━━━⭑━➤
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`,
 
-`> ╭━━━━━━━━━━━━━━╾╮
-> ┃⏱️ *UᎮTIMᏋ ᎦTᏘTUᎦ* ⏱️
+`> ╭━ 「 *\`XTREME XMD\`* 」
 > ┃🟢 ᴏɴʟɪɴᴇ ғᴏʀ: ${uptime}
 > ┃🔢 sᴇᴄᴏɴᴅs: ${seconds}
 > ┃📅 sɪɴᴄᴇ: ${startTime.toLocaleString()}
-> ╰━━━━━━━━━━━━━━╾╯
+> ╰━━━━━━━━━━━━━━⭑━➤
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`,
 
-`╭━━━━━━━━━━━━━━━━╮
-┃  𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗 *UPTIME*
-┃╭┅┅┅┅┅┅┅┅┅┅┉┉┈⊷
-┃╏◈ ᴅᴜʀᴀᴛɪᴏɴ: ${uptime}
-┃╏◈ sᴇᴄᴏɴᴅs: ${seconds}
-┃╏◈ sᴛᴀʀᴛ ᴛɪᴍᴇs: ${startTime.toLocaleString()}
-┃╏◈ sᴛᴀʙɪʟɪᴛʏ: 100%
-┃╰┅┅┅┅┅┅┅┉┅┅┅┈⊷
-╰━━━━━━━━━━━━━━━━╯
+`╭─ 「 *\`XTREME XMD\`* 」
+│◈ ᴅᴜʀᴀᴛɪᴏɴ: ${uptime}
+│◈ sᴇᴄᴏɴᴅs: ${seconds}
+│◈ sᴛᴀʀᴛ ᴛɪᴍᴇs: ${startTime.toLocaleString()}
+│◈ sᴛᴀʙɪʟɪᴛʏ: 100%
+╰────────────────❂
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`
         ];
 

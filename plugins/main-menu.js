@@ -27,14 +27,14 @@ async (conn, mek, m, { from, reply }) => {
 
     // Menu principal
     let menuText = `
-*╭━━『 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗』
-*┃❃* *ᴜsᴇʀ* : @${m.sender.split("@")[0]}
-*┃❃* *ʀᴜɴᴛɪᴍᴇ* : ${uptime()}
-*┃❃* *ᴍᴏᴅᴇ* : ${config.MODE}
-*┃❃* *ᴘʀᴇғɪx* : 「 ${config.PREFIX} 」
-*┃❃* *ᴩʟᴜɢɪɴ* : ${totalCommands}
-*┃❃* *ᴅᴇᴠ* : *\`ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ\`*
-*┃❃* *ᴠᴇʀsɪᴏɴs* : 1.0.0
+*╭━━*『 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗』
+*┃* ❃ *ᴜsᴇʀ* : @${m.sender.split("@")[0]}
+*┃* ❃ *ʀᴜɴᴛɪᴍᴇ* : ${uptime()}
+*┃* ❃ *ᴍᴏᴅᴇ* : ${config.MODE}
+*┃* ❃ *ᴘʀᴇғɪx* : 「 ${config.PREFIX} 」
+*┃* ❃ *ᴩʟᴜɢɪɴ* : ${totalCommands}
+*┃* ❃ *ᴅᴇᴠ* : *\`ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ\`*
+*┃* ❃ *ᴠᴇʀsɪᴏɴs* : 1.0.0
 *╰────────────────❍*
 `;
 
@@ -49,7 +49,7 @@ async (conn, mek, m, { from, reply }) => {
 
     const keys = Object.keys(category).sort();
     for (let k of keys) {
-      menuText += `\n\n*╭─ 「 *\`${k.toUpperCase()}\`* 」`;
+      menuText += `\n\n*╭─ 「 \`${k.toUpperCase()}\`* 」`;
       const cmds = category[k].filter(c => c.pattern).sort((a, b) => a.pattern.localeCompare(b.pattern));
       cmds.forEach((cmd) => {
         const usage = cmd.pattern.split('|')[0];

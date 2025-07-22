@@ -42,7 +42,7 @@ async (conn, mek, m, { from, reply }) => {
 cmd({
     pattern: "heart",
     desc: "Displays a dynamic edit msg for fun.",
-    category: "tools",
+    category: "👨🏻‍💻tools",
     react: "❤️",
     filename: __filename
 },
@@ -81,7 +81,7 @@ async (conn, mek, m, { from, reply }) => {
 cmd({
     pattern: "angry",
     desc: "Displays a dynamic edit msg for fun.",
-    category: "tools",
+    category: "👨🏻‍💻tools",
     react: "🤡",
     filename: __filename
 },
@@ -118,7 +118,7 @@ async (conn, mek, m, { from, reply }) => {
 cmd({
     pattern: "sad",
     desc: "Displays a dynamic edit msg for fun.",
-    category: "tools",
+    category: "👨🏻‍💻tools",
     react: "😶",
     filename: __filename
 },
@@ -156,7 +156,7 @@ async (conn, mek, m, { from, reply }) => {
 cmd({
     pattern: "shy",
     desc: "Displays a dynamic edit msg for fun.",
-    category: "tools",
+    category: "👨🏻‍💻tools",
     react: "🧐",
     filename: __filename
 },
@@ -193,7 +193,7 @@ async (conn, mek, m, { from, reply }) => {
 cmd({
     pattern: "moon",
     desc: "Displays a dynamic edit msg for fun.",
-    category: "tools",
+    category: "👨🏻‍💻tools",
     react: "🌚",
     filename: __filename
 },
@@ -234,7 +234,7 @@ async (conn, mek, m, { from, reply }) => {
 cmd({
     pattern: "confused",
     desc: "Displays a dynamic edit msg for fun.",
-    category: "tools",
+    category: "👨🏻‍💻tools",
     react: "🤔",
     filename: __filename
 },
@@ -271,7 +271,7 @@ async (conn, mek, m, { from, reply }) => {
 cmd({
     pattern: "hot",
     desc: "Displays a dynamic edit msg for fun.",
-    category: "tools",
+    category: "👨🏻‍💻tools",
     react: "💋",
     filename: __filename
 },

@@ -3,7 +3,7 @@ const { cmd } = require('../command');
 cmd({
     pattern: "block",
     desc: "Blocks a person",
-    category: "owner",
+    category: "👑owner",
     react: "🚫",
     filename: __filename
 },
@@ -42,7 +42,7 @@ async (conn, m, { reply, q, react }) => {
 cmd({
     pattern: "unblock",
     desc: "Unblocks a person",
-    category: "owner",
+    category: "👑owner",
     react: "🔓",
     filename: __filename
 },

@@ -46,7 +46,7 @@ async (conn, mek, m, { from, reply }) => {
 
     const keys = Object.keys(category).sort();
     for (let k of keys) {
-      menuText += `\n\n*╭─ 「 \`${k.toUpperCase()}\`* 」`;
+      menuText += `\n*╭─ 「 \`${k.toUpperCase()}\`* 」`;
       const cmds = category[k].filter(c => c.pattern).sort((a, b) => a.pattern.localeCompare(b.pattern));
       cmds.forEach((cmd) => {
         const usage = cmd.pattern.split('|')[0];

@@ -3,7 +3,7 @@ const { cmd } = require('../command');
 cmd({
     pattern: "block",
     desc: "Blocks a person",
-    category: "👑owner",
+    category: "owner",
     react: "🚫",
     filename: __filename
 },

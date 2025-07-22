@@ -2,7 +2,8 @@ const config = require('../config');
 const moment = require('moment-timezone');
 const { cmd, commands } = require('../command');
 const axios = require('axios');
-const menuText ={
+
+const smallCaps = {
   "A": "ᴀ",
   "B": "ʙ",
   "C": "ᴄ",
@@ -31,6 +32,10 @@ const menuText ={
   "Z": "ᴢ"
 };
 
+const toSmallCaps = (text) => {
+  return text.split('').map(char => smallCaps[char.toUpperCase()] || char).join('');
+};
+
 cmd({
   pattern: "menu",
   alias: ["allmenu", "prince"],
@@ -53,7 +58,6 @@ async (conn, mek, m, { from, reply }) => {
       return `${h}h ${m}m ${s}s`;
     };
 
-    // Menu principal
     let menuText = `*╭━━*『 𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗』
 *┃* ❃ *ᴜsᴇʀ* : @${m.sender.split("@")[0]}
 *┃* ❃ *ʀᴜɴᴛɪᴍᴇ* : ${uptime()}
@@ -64,7 +68,7 @@ async (conn, mek, m, { from, reply }) => {
 *┃* ❃ *ᴠᴇʀsɪᴏɴs* : 1.0.0
 *╰────────────────❍*
 `;
-    // Catégories et commandes
+
     let category = {};
     for (let cmd of commands) {
       if (!cmd.category) continue;
@@ -78,15 +82,13 @@ async (conn, mek, m, { from, reply }) => {
       const cmds = category[k].filter(c => c.pattern).sort((a, b) => a.pattern.localeCompare(b.pattern));
       cmds.forEach((cmd) => {
         const usage = cmd.pattern.split('|')[0];
-        menuText += `\n*├❍ ${config.PREFIX}${usage}*`;
+        menuText += `\n*├❍ ${config.PREFIX}${toSmallCaps(usage)}*`;
       });
       menuText += `\n*╰────────────────❍*`;
     }
 
-    // Affecter à la variable caption
     const selectedStyle = menuText;
 
-    // Envoyer l'image avec le menu
     await conn.sendMessage(from, {
       image: { url: 'https://files.catbox.moe/mry39g.jpg' },
       caption: selectedStyle,
@@ -96,7 +98,7 @@ async (conn, mek, m, { from, reply }) => {
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
           newsletterJid: '120363418161689316@newsletter',
-          newsletterName:'𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
+          newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
           serverMessageId: 143
         }
       }

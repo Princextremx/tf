@@ -5,7 +5,7 @@ cmd({
   pattern: "demoteall",
   alias: ["dmtall"],
   desc: "Demote all group admins (except bot, owner, sudo).",
-  category: "group",
+  category: "🍧group",
   filename: __filename
 }, async (conn, m, msg) => {
   try {

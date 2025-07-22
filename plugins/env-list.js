@@ -8,7 +8,7 @@ cmd({
   alias: ["setting", "env"],
   react: "⚙️",
   desc: "View and configure bot settings",
-  category: "👑owner",
+  category: "owner",
   filename: __filename
 }, async (conn, m, msg, { from, isOwner }) => {
   try {

@@ -34,7 +34,7 @@ cmd({
     pattern: "openai",
     alias: ["chatgpt", "gpt3", "open-gpt"],
     desc: "Chat with OpenAI",
-    category: "ai",
+    category: "🤖 ai",
     react: "🧠",
     filename: __filename
 },
@@ -63,7 +63,7 @@ cmd({
     pattern: "deepseek",
     alias: ["deep", "seekai"],
     desc: "Chat with DeepSeek AI",
-    category: "ai",
+    category: "🤖 ai",
     react: "🧠",
     filename: __filename
 },

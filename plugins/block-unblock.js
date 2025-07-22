@@ -42,7 +42,7 @@ async (conn, m, { reply, q, react }) => {
 cmd({
     pattern: "unblock",
     desc: "Unblocks a person",
-    category: "👑owner",
+    category: "owner",
     react: "🔓",
     filename: __filename
 },

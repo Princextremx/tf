@@ -59,14 +59,13 @@ cmd({
     const userName = message.pushName || 'User';
 
     await reply(
-`
-╭─ 「 *\`TOOLS URL\`* 」
-┃ *📥xᴛʀᴇᴍᴇ ᴍᴅx toᴜʀʟ*
-┃ *🏋️‍♂️sɪᴢᴇ: ${formatBytes(mediaBuffer.length)}*
-┃ *⏰ᴛɪᴍᴇ: ${timestamp}*
-┃ *📝ᴍᴇᴅɪᴀ: ${mediaType} ᴜᴘʟᴏᴀᴅᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ*
-┃ *⏳ᴜʀʟ: ${mediaUrl}*
-╰╼━━━━━━━━━━━━━━━━❍
+`╭─ 「 *\`TOOLS URL\`* 」
+│❍ *xᴛʀᴇᴍᴇ ᴍᴅx toᴜʀʟ*
+│❍ *sɪᴢᴇ: ${formatBytes(mediaBuffer.length)}*
+│❍ *ᴛɪᴍᴇ: ${timestamp}*
+│❍ *ᴍᴇᴅɪᴀ: ${mediaType} ᴜᴘʟᴏᴀᴅᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ*
+│❍ *ᴜʀʟ: ${mediaUrl}*
+╰─────────────────❍
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ* `
     );
 

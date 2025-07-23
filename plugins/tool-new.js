@@ -27,7 +27,7 @@ async (conn, mek, m, { reply }) => {
 cmd({
     pattern: "binary",
     desc: "Convert text into binary format.",
-    category: "utility",
+    category: "📡 utility",
     filename: __filename,
 }, 
 async (conn, mek, m, { args, reply }) => {
@@ -49,7 +49,7 @@ async (conn, mek, m, { args, reply }) => {
 cmd({
     pattern: "dbinary",
     desc: "Decode binary string into text.",
-    category: "utility",
+    category: "📡 utility",
     filename: __filename,
 }, 
 async (conn, mek, m, { args, reply }) => {

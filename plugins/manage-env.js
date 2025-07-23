@@ -334,7 +334,7 @@ cmd({
     pattern: "auto-sticker",
     alias: ["autosticker"],
     desc: "enable or disable auto-sticker.",
-    category: "settings",
+    category: "⚙️ settings",
     filename: __filename
 },    
 async (conn, mek, m, { from, args, isCreator, reply }) => {

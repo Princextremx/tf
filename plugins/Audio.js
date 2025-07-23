@@ -8,7 +8,7 @@ const ytdl = require('ytdl-core');
 cmd({
   pattern: "audio",
   desc: "Convertit une vidéo en audio MP3",
-  category: "⚓ convertisseur",
+  category: "⚓ mp3",
   filename: __filename,
   react: "🎧"
 }, async (m, { quoted, args, mime }) => {

@@ -6,7 +6,6 @@ const antiMentionGroups = new Set();
 cmd({
     pattern: "antimention",
     alias: ["nomention", "blockping"],
-    react: "🚫",
     desc: "*Aᴄᴛɪᴠᴇ/ᴅᴇ́sᴀᴄᴛɪᴠᴇ ʟ'ᴀɴᴛɪ-@ᴛᴏᴜs ᴅᴀɴs ʟᴇ ɢʀᴏᴜᴘᴇ*",
     category: "⛑️ group",
     use: "*.antimention on/off/status",

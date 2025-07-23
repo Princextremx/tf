@@ -18,7 +18,7 @@ async (conn, mek, m, { from, isOwner, reply }) => {
 cmd({
     pattern: "broadcast",
     desc: "Broadcast a message to all groups.",
-    category: "owner",
+    category: "👑 owner",
     react: "📢",
     filename: __filename
 },
@@ -77,7 +77,7 @@ async (conn, mek, m, { from, isOwner, reply }) => {
 cmd({
     pattern: "gjid",
     desc: "Get the list of JIDs for all groups the bot is part of.",
-    category: "owner",
+    category: "👑 owner",
     react: "📝",
     filename: __filename
 },

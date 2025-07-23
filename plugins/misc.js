@@ -10,7 +10,7 @@ cmd({
     pattern: "antidelete",
     alias: ['antidel', 'ad'],
     desc: "Sets up the Antidelete",
-    category: "🏺 misc",
+    category: "misc",
     filename: __filename
 },
 async (conn, mek, m, { from, reply, q, text, isOwner, fromMe }) => {
@@ -75,7 +75,7 @@ cmd({
     pattern: "vv3",
     alias: ['retrive', '🔥'],
     desc: "Fetch and resend a ViewOnce message content (image/video).",
-    category: "🏺 misc",
+    category: "misc",
     use: '<query>',
     filename: __filename
 },

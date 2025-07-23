@@ -22,51 +22,52 @@ async (conn, mek, m, { from, reply, q, text, isOwner, fromMe }) => {
             case 'on':
                 await setAnti('gc', false);
                 await setAnti('dm', false);
-                return reply('_AntiDelete is now off for Group Chats and Direct Messages._');
+                return reply('_*ᴀɴᴛɪᴅᴇʟᴇᴛᴇ ɪs ɴᴏᴡ ᴏғғ ғᴏʀ ɢʀᴏᴜᴘ ᴄʜᴀᴛs ᴀɴᴅ ᴅɪʀᴇᴄᴛ ᴍᴇssᴀɢᴇs*_');
 
             case 'off gc':
                 await setAnti('gc', false);
-                return reply('_AntiDelete for Group Chats is now disabled._');
+                return reply('_*ᴀɴᴛɪᴅᴇʟᴇᴛᴇ ғᴏʀ ɢʀᴏᴜᴘ ᴄʜᴀᴛs ɪs ɴᴏᴡ ᴅɪsᴀʙʟᴇᴅ*_');
 
             case 'off dm':
                 await setAnti('dm', false);
-                return reply('_AntiDelete for Direct Messages is now disabled._');
+                return reply('_*ᴀɴᴛɪᴅᴇʟᴇᴛᴇ ғᴏʀ ᴅɪʀᴇᴄᴛ ᴍᴇssᴀɢᴇs ɪs ɴᴏᴡ ᴅɪsᴀʙʟᴇᴅ*_');
 
             case 'set gc':
                 const gcStatus = await getAnti('gc');
                 await setAnti('gc', !gcStatus);
-                return reply(`_AntiDelete for Group Chats ${!gcStatus ? 'enabled' : 'disabled'}._`);
+                return reply(`_*ᴀɴᴛɪᴅᴇʟᴇᴛᴇ ғᴏʀ ɢʀᴏᴜᴘ ᴄʜᴀᴛs ${!gcStatus ? 'ᴇɴᴀʙʟᴇᴅ' : 'ᴅɪsᴀʙʟᴇᴅ'}*_`);
 
             case 'set dm':
                 const dmStatus = await getAnti('dm');
                 await setAnti('dm', !dmStatus);
-                return reply(`_AntiDelete for Direct Messages ${!dmStatus ? 'enabled' : 'disabled'}._`);
+                return reply(`_*ᴀɴᴛɪᴅᴇʟᴇᴛᴇ ғᴏʀ ᴅɪʀᴇᴄᴛ ᴍᴇssᴀɢᴇs ${!dmStatus ? 'ᴇɴᴀʙʟᴇᴅ' : 'ᴅɪsᴀʙʟᴇᴅ'}*_`);
 
             case 'set all':
                 await setAnti('gc', true);
                 await setAnti('dm', true);
-                return reply('_AntiDelete set for all chats._');
+                return reply('_*ᴀɴᴛɪᴅᴇʟᴇᴛᴇ sᴇᴛ ғᴏʀ ᴀʟʟ ᴄʜᴀᴛs*_');
 
             case 'status':
                 const currentDmStatus = await getAnti('dm');
                 const currentGcStatus = await getAnti('gc');
-                return reply(`_AntiDelete Status_\n\n*DM AntiDelete:* ${currentDmStatus ? 'Enabled' : 'Disabled'}\n*Group Chat AntiDelete:* ${currentGcStatus ? 'Enabled' : 'Disabled'}`);
+                return reply(`_*ᴀɴᴛɪᴅᴇʟᴇᴛᴇ sᴛᴀᴛᴜs*_\n\n*ᴅᴍ ᴀɴᴛɪᴅᴇʟᴇᴛᴇ:* ${currentDmStatus ? 'ᴇɴᴀʙʟᴇᴅ' : 'ᴅɪsᴀʙʟᴇᴅ'}\n*ɢʀᴏᴜᴘ ᴄʜᴀᴛ ᴀɴᴛɪᴅᴇʟᴇᴛᴇ:* ${currentGcStatus ? 'ᴇɴᴀʙʟᴇᴅ' : 'ᴅɪsᴀʙʟᴇᴅ'}`);
 
             default:
-                const helpMessage = `-- *AntiDelete Command Guide: --*
-                • \`\`.antidelete on\`\` - Reset AntiDelete for all chats (disabled by default)
-                • \`\`.antidelete off gc\`\` - Disable AntiDelete for Group Chats
-                • \`\`.antidelete off dm\`\` - Disable AntiDelete for Direct Messages
-                • \`\`.antidelete set gc\`\` - Toggle AntiDelete for Group Chats
-                • \`\`.antidelete set dm\`\` - Toggle AntiDelete for Direct Messages
-                • \`\`.antidelete set all\`\` - Enable AntiDelete for all chats
-                • \`\`.antidelete status\`\` - Check current AntiDelete status`;
+                const helpMessage = `╭─ 「 *\`COMMANDS GUIDE\`* 」
+│• .ᴀɴᴛɪᴅᴇʟᴇᴛᴇ ᴏɴ–ᴀᴄᴛɪᴠᴇ ᴀɴᴛɪᴅᴇʟᴇᴛᴇ ɢʟᴏʙᴀʟᴇᴍᴇɴᴛ
+│• .ᴀɴᴛɪᴅᴇʟᴇᴛᴇ ᴏғғ ɢᴄ–ᴅᴇsᴀᴄᴛɪᴠᴀᴛᴇ ғᴏʀ ɢʀᴏᴜᴘ
+│• .ᴀɴᴛɪᴅᴇʟᴇᴛᴇ ᴏғғ ᴅᴍ–ᴅᴇsᴀᴄᴛɪᴠᴀᴛ ғᴏʀ ᴅᴍ
+│• .ᴀɴᴛɪᴅᴇʟᴇᴛᴇ sᴇᴛ ɢᴄ–ᴀᴄᴛɪᴠᴀᴛᴇ/ᴅᴇsᴀᴄᴛɪᴠᴀᴛᴇ ғᴏʀ ɢʀᴏᴜᴘs
+│• .ᴀɴᴛɪᴅᴇʟᴇᴛᴇ sᴇᴛ ᴅᴍ–ᴀᴄᴛɪᴠᴀᴛᴇ/ᴅᴇsᴀᴄᴛɪᴠᴀᴛᴇ ғᴏʀ ᴅᴍ
+│• .ᴀɴᴛɪᴅᴇʟᴇᴛᴇ sᴇᴛ ᴀʟʟ–ᴀᴄᴛɪᴠᴀᴛᴇ ғᴏʀ ᴀʟʟ ᴄʜᴀᴛs
+│• .ᴀɴᴛɪᴅᴇʟᴇᴛᴇ sᴛᴀᴛᴜs–ᴠᴇ́ʀɪғɪᴇ ʟᴇ sᴛᴀᴛᴜᴛ ᴀᴄᴛᴜᴇʟ
+╰──────────────────❍`;
 
                 return reply(helpMessage);
         }
     } catch (e) {
         console.error("Error in antidelete command:", e);
-        return reply("An error occurred while processing your request.");
+        return reply("*_ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ ᴡʜɪʟᴇ ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ_*");
     }
 });
 

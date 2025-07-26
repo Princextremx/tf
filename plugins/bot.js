@@ -6,7 +6,7 @@ cmd({
     pattern: "bot",
     alias: ["bott", "bots"],
     desc: "thanks to dev for helping",
-    category: "main",
+    category: "misc",
     react: "🤖",
     filename: __filename
 },

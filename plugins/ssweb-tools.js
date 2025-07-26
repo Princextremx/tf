@@ -1,54 +1,69 @@
-// code by ⿻ ⌜ 𝐊𝐇𝐀𝐍 ⌟⿻⃮͛🇵🇰𖤐
-
-const axios = require("axios");
-const config = require('../config');
-const { cmd } = require('../command');
+const { cmd } = require("../command");
+const fetch = require("node-fetch");
 
 cmd({
-  pattern: "ss",
-  alias: ["ssweb"],
-  react: "💫",
+  pattern: 'ss',
+  alias: ['ssweb'],
+  react: '🖼',
   desc: "Download screenshot of a given link.",
   category: "🧶 other",
   use: ".ss <link>",
-  filename: __filename,
-}, 
-async (conn, mek, m, {
-  from, l, quoted, body, isCmd, command, args, q, isGroup, sender, 
-  senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, 
-  groupMetadata, groupName, participants, isItzcp, groupAdmins, 
-  isBotAdmins, isAdmins, reply 
-}) => {
+  filename: __filename
+}, async (client, m, msg, { from, reply, q }) => {
+
+  // Vérifie si un lien est fourni
   if (!q) {
-    return reply("_*ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴜʀʟ ᴛᴏ ᴄᴀᴘᴛᴜʀᴇ ᴀ sᴄʀᴇᴇɴsʜᴏᴛ*_");
+    return reply("Please provide a URL to capture a screenshot.");
   }
 
-  try {
-    // created by jawad tech 
-    const response = await axios.get(`https://api.davidcyriltech.my.id/ssweb?url=${q}`);
-    const screenshotUrl = response.data.screenshotUrl;
+  // Vérifie si l'URL commence bien par http:// ou https://
+  if (!/^https?:\/\//.test(q)) {
+    return reply("❗ Please provide a valid URL starting with http:// or https://");
+  }
 
-    // give credit and use
-    const imageMessage = {
-      image: { url: screenshotUrl },
-      caption: "*ʏᴏᴜʀ sᴄʀᴇᴇɴ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n\n> *_ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ_*",
+  // Fonction pour envoyer l'image
+  const sendScreenshot = async (imageBuffer) => {
+    return await client.sendMessage(from, {
+      image: imageBuffer,
+      caption: `*📸 sᴄʀᴇᴇɴsʜᴏᴛ ᴛᴏᴏʟ*\n\n🌐 *ᴜʀʟ:* ${q}\n\n> _*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*_`,
       contextInfo: {
-        mentionedJid: [m.sender],
+        mentionedJid: [msg.sender],
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: '120363418161689316@newsletter',
-          newsletterName: "𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗",
-          serverMessageId: 143,
-        },
-      },
-    };
+          newsletterJid: "120363418161689316@newsletter",
+          newsletterName: "𝐗𝐓𝐑𝐄𝐌𝐄-𝐗𝐌𝐃",
+          serverMessageId: 143
+        }
+      }
+    }, { quoted: msg });
+  };
 
-    await conn.sendMessage(from, imageMessage, { quoted: m });
+  try {
+    // Appel API Zenz pour obtenir la capture d'écran
+    const apiUrl = "https://zenz.biz.id/tools/ssweb?url=" + encodeURIComponent(q);
+    const response = await fetch(apiUrl);
+
+    const contentType = response.headers.get("content-type");
+
+    // Si l’API renvoie directement une image
+    if (contentType && contentType.startsWith("image/")) {
+      const imageBuffer = await response.buffer();
+      return await sendScreenshot(imageBuffer);
+    }
+
+    // Sinon, on récupère l’URL de l’image dans la réponse JSON
+    const json = await response.json();
+    if (!json.status || !json.result) {
+      throw new Error("Failed to get screenshot");
+    }
+
+    const imageBuffer = await fetch(json.result).then(res => res.buffer());
+    return await sendScreenshot(imageBuffer);
+
   } catch (error) {
     console.error(error);
-    reply("*ғᴀɪʟᴇᴅ ᴛᴏ ᴄᴀᴘᴛᴜʀᴇ ᴛʜᴇ sᴄʀᴇᴇɴsʜᴏᴛ. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ*");
+    reply("❌ Failed to capture the screenshot. Please try again later.");
   }
 });
-
-// ⿻ ⌜ XTREME ⌟⿻⃮͛𖤐
+  

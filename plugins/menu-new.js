@@ -79,7 +79,7 @@ _ʀᴇᴘʟʏ ᴡɪᴛʜ ᴀ ɴᴜᴍʙᴇʀ (1–10) ᴛᴏ ᴠɪᴇᴡ ᴛʜ�
             try {
                 await new Promise(resolve => setTimeout(resolve, 1000)); // Small delay after image
                 await conn.sendMessage(from, {
-                    audio: { url: 'https://files.catbox.moe/uzvvj1.mp3' },
+                    audio: { url: 'https://files.catbox.moe/75xm5n.mp3' },
                     mimetype: 'audio/mp4',
                     ptt: true,
                 }, { quoted: mek });

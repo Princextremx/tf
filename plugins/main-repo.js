@@ -21,7 +21,7 @@ async (conn, mek, m, { from, reply }) => {
 
         const response = await fetch(`https://api.github.com/repos/${username}/${repoName}`, {
             headers: {
-                'User-Agent': 'XTREME-XMD'
+                'User-Agent': 'XTEME-XMD'
             }
         });
 
@@ -35,16 +35,13 @@ async (conn, mek, m, { from, reply }) => {
 
         const repoData = await response.json();
 
-        const message = `> ╭⭑──➤ *BOT REPO*
-> │♢ *ʀᴇᴘᴏsɪᴛᴏʀʏ*: ${repoData.name}
-> │♢ *ᴏᴡɴᴇʀ*: ${repoData.owner.login}
-> │♢ *sᴛᴀʀs*: ${repoData.stargazers_count}
-> │♢ *ғᴏʀᴋs*: ${repoData.forks_count}
-> │♢ *ᴜʀʟ*: ${repoData.html_url}
-> │♢ *ᴛᴜᴛᴏ*: https://www.youtube.com/@DEV_PRINCE_XTREME
-> │♢ *ᴅᴇsᴄʀɪᴘᴛɪᴏɴ*:
-> │${repoData.description || 'ɴᴏ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ'}
-> ╰───────────────⊷
+        const message = `╭─ 「 *\`𝐗𝐓𝐑𝐄𝐌𝐄-𝐗𝐌𝐃\`* 」
+│• *ʀᴇᴘᴏsɪᴛᴏʀʏ*: ${repoData.name}
+│• *ᴏᴡɴᴇʀ*: ${repoData.owner.login}
+│• *sᴛᴀʀs*: ${repoData.stargazers_count}
+│• *ғᴏʀᴋs*: ${repoData.forks_count}
+│• *ᴜʀʟ*: ${repoData.html_url}
+╰───────────────⊷
 > ${config.DESCRIPTION}`;
 
         await conn.sendMessage(from, {
@@ -56,7 +53,7 @@ async (conn, mek, m, { from, reply }) => {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363418161689316@newsletter',
-                    newsletterName:'𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗',
+                    newsletterName:'𝐗𝐓𝐑𝐄𝐌𝐄-𝐗𝐌𝐃',
                     serverMessageId: 143
                 }
             }
@@ -67,4 +64,4 @@ async (conn, mek, m, { from, reply }) => {
         reply("❌ Une erreur est survenue lors de la récupération du dépôt.");
     }
 });
-              
+

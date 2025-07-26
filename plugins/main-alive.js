@@ -7,8 +7,8 @@ cmd({
     pattern: "alive",
     alias: ["bo", "ob"],
     desc: "Check bot is alive or not",
-    category: "main",
-    react: "🌟",
+    category: "🍥 main",
+    react: "💫",
     filename: __filename
 },
 async (conn, mek, m, { from, sender, reply }) => {

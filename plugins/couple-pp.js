@@ -6,7 +6,7 @@ cmd({
   'alias': ["couple", "cpp"],
   'react': '💑',
   'desc': "Obtenez des images de couple masculin et féminin.",
-  'category': "image",
+  'category': "misc",
   'use': ".couplepp",
   'filename': __filename
 }, async (conn, m, store, {

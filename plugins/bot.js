@@ -11,6 +11,8 @@ cmd({
 },
 async (conn, mek, m, { from }) => {
     try {
+        const uptime = runtime(process.uptime());
+        const startTime = new Date(Date.now() - process.uptime() * 1000);
         const message = `╭─ 「 *\`XTREME BOT ONLINE\`* 」
 │꙳ *ʙᴏᴛ ɴᴀᴍᴇ* ↔ xᴛʀᴇᴍᴇ xᴍᴅ
 │꙳ *sᴛᴀᴛᴜs* ↔ ᴏɴʟɪɴᴇ

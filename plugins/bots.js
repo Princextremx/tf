@@ -2,7 +2,7 @@ const config = require('../config')
 const { runtime } = require('../lib/functions');
 const {cmd , commands} = require('../command')
 cmd({
-    pattern: "about",
+    pattern: "bot",
     alias: "bots",
     react: "🤖",
     desc: "get owner dec",

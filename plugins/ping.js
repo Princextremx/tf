@@ -32,7 +32,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
         const end = new Date().getTime();
         const responseTime = (end - start) / 1000;
 
-        const text = `╭━━ 「 *\` 𝗣𝗜𝗡𝗚 𝗧𝗘𝗦𝗧\`* 」 
+        const text = `╭━━ 「 *\`𝗣𝗜𝗡𝗚 𝗧𝗘𝗦𝗧\`* 」 
 ┃• 🤖 *BOT* : *XTREME-XMD*
 ┃• ⏳ *PING* : *${responseTime.toFixed(2)}MS ${reactionEmoji}*
 ┃• 💫 *STATUTS* : ONLINE

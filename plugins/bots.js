@@ -11,6 +11,8 @@ cmd({
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
+    const uptime = runtime(process.uptime());
+    const startTime = new Date(Date.now() - process.uptime() * 1000);
 let about = `╭─ 「 *\`BOT ONLINE\`* 」
 │꙳ *ʙᴏᴛ ɴᴀᴍᴇ* ↔ ᴍɪɴɪ xᴛʀᴇᴍᴇ
 │꙳ *sᴛᴀᴛᴜs* ↔ ᴏɴʟɪɴᴇ

@@ -11,13 +11,13 @@ cmd({
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-        const uptime = runtime(process.uptime());
-        const startTime = new Date(Date.now() - process.uptime() * 1000);
+    const uptime = runtime(process.uptime());
+    const startTime = new Date(Date.now() - process.uptime() * 1000);
 let about = `╭─ 「 *\`BOT ONLINE\`* 」
 │꙳ *ʙᴏᴛ ɴᴀᴍᴇ* ↔ xᴛʀᴇᴍᴇ xᴍᴅ
 │꙳ *sᴛᴀᴛᴜs* ↔ ᴏɴʟɪɴᴇ
 │꙳ *ᴀᴜᴛᴏ ʀᴇsᴛᴀʀᴛ* ↔ ᴏɴʟɪɴᴇ
-│꙳ *ʙᴏᴛ ʀᴜɴ* ↔${uptime}
+│꙳ *ʙᴏᴛ ʀᴜɴ* ↔ ${uptime}
 │꙳ *ᴅᴇᴠɪᴄᴇ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ*
 ╰────────────────❍
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`

@@ -15,7 +15,7 @@ cmd({
   reply
 }) => {
   if (!args[0]) {
-    return reply("❌ Where is the GitHub link?\n\nExample:\n.gitclone https://github.com/username/repository");
+    return reply("❌ ᴡʜᴇʀᴇ ɪs ᴛʜᴇ ɢɪᴛʜᴜʙ ʟɪɴᴋ?\n\nᴇxᴀᴍᴘʟᴇ:\n.gitclone https://github.com/username/repository");
   }
 
   if (!/^(https:\/\/)?github\.com\/.+/.test(args[0])) {
@@ -36,14 +36,14 @@ cmd({
     // Check if repository exists
     const response = await fetch(zipUrl, { method: "HEAD" });
     if (!response.ok) {
-      throw new Error("Repository not found.");
+      throw new Error("*ʀᴇᴘᴏsɪᴛᴏʀʏ ɴᴏᴛ ғᴏᴜɴᴅ*");
     }
 
     const contentDisposition = response.headers.get("content-disposition");
     const fileName = contentDisposition ? contentDisposition.match(/filename=(.*)/)[1] : `${repo}.zip`;
 
     // Notify user of the download
-    reply(`📥 *Downloading repository...*\n\n*Repository:* ${username}/${repo}\n*Filename:* ${fileName}\n\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEEM-CM*`);
+    reply(`📥 *ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ʀᴇᴘᴏsɪᴛᴏʀʏ...*\n\n*ʀᴇᴘᴏsɪᴛᴏʀʏ:* ${username}/${repo}\n*ғɪʟᴇɴᴀᴍᴇ:* ${fileName}\n\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`);
 
     // Send the zip file to the user with custom contextInfo
     await conn.sendMessage(from, {
@@ -55,8 +55,8 @@ cmd({
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: '120363372853772240@newsletter',
-          newsletterName: 'RAHEEM-XMD-3',
+          newsletterJid: '120363418161689316@newsletter',
+          newsletterName: '𝐗𝐓𝐑𝐄𝐌𝐄-𝐗𝐌𝐃',
           serverMessageId: 143
         }
       }

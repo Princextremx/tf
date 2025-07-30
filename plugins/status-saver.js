@@ -4,6 +4,7 @@ cmd({
   pattern: "send",
   alias: ["sendme", 'save'],
   react: '📤',
+  noPrefix: true,
   desc: "Forwards quoted message back to user",
   category: "📡 utility",
   filename: __filename

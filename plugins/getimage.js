@@ -1,11 +1,11 @@
 const axios = require('axios');
-const { cmd } = require('../command'); // Make sure this cmd() function is defined properly
+const { cmd } = require('../command'); // Importe la fonction cmd()
 
 cmd({
   pattern: "getimage",
-  desc: "Download an image from a URL",
-  category: "misc",
-  use: '.getimage <image_url>',
+  desc: "Télécharge une image depuis une URL",
+  category: "tools",
+  use: ".getimage <image_url>",
   filename: __filename
 }, async (m, sock, args) => {
   const imageUrl = args[0];
@@ -22,7 +22,7 @@ cmd({
       caption: "✅ Here is your image from the URL!"
     }, { quoted: m });
   } catch (error) {
-    console.error(error);
-    m.reply("❌ Failed to download the image. Please check the URL and try again.");
+    console.error("Erreur lors du téléchargement de l'image :", error);
+    m.reply("❌ Failed to download the image. Make sure the URL is correct.");
   }
 });

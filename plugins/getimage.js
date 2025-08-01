@@ -3,8 +3,8 @@ const fetch = require("node-fetch");
 const axios = require("axios");
 
 cmd({
-    pattern: "getimage",
-    alias: ['short', 'shorturl'],
+    pattern: "short",
+    alias: ['shorts', 'shorturl'],
     react: "🫧",
     desc: "Makes URL tiny.",
     category: "⌚ misc",

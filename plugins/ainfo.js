@@ -2,8 +2,8 @@ const { cmd } = require('../command');
 const axios = require('axios');
 
 cmd({
-    pattern: "ainfo",
-    alias: ["siteinfo", "we"],
+    pattern: "web",
+    alias: ["siteinfo", "webs"],
     desc: "Get website intel using GTech API", // Changed description
     category: "⌚ misc",
     react: "🕵️‍♂️", // Changed emoji to a spy/investigator

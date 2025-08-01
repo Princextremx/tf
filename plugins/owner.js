@@ -18,9 +18,9 @@ cmd({
     owners.forEach((owner) => {
       const vcard = `BEGIN:VCDCARD\n` +
         `VERSION:3.0\n` +
-        `FN:${owners.name}\n` +
-        `ORG:${owners.organization};\n` +
-        `TEL;type=CELL;type=VOICE;waid=${owners.number.replace('+', '')}:${owners.number}\n` +
+        `FN:${owner.name}\n` +
+        `ORG:${owner.organization};\n` +
+        `TEL;type=CELL;type=VOICE;waid=${owner.number.replace('+', '')}:${owner.number}\n` +
         `END:VCARD`;
       contacts.push({ vcard });
     });
@@ -42,7 +42,7 @@ cmd({
   } catch (error) {
     console.error(error);
     await conn.sendMessage(from, {
-      text: 'Désolé, il y a eu une erreur lors de la récupération des contacts des propriétaires.'
+      text: 'Sorry, there was an error retrieving owner contacts.'
     }, { quoted: mek });
   }
 });

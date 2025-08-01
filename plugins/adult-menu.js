@@ -6,7 +6,7 @@ cmd({
     pattern: "adult",
     alias: ["adultmenu"],
     desc: "menu the bot",
-    category: "menu",
+    category: "🧾 menu",
     react: "🎀",
     filename: __filename
 }, 

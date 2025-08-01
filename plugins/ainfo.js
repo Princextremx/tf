@@ -25,15 +25,14 @@ async (conn, mek, m, { args, reply }) => {
 
         const info = data.data;
 
-        const caption = `╭─❰ 𝐗𝐓𝐑𝐄𝐌𝐄-𝐗𝐌𝐃 ❱──➤ // D-style heading
-┃ 🏷️ *The Name:* ${info.title || 'Unknown Ops'} // Xtreme-style terms
-┃ 📃 *The Cover Story:* ${info.description || 'No Official Story'}
-┃ 🏢 *The Boss/Publisher:* ${info.publisher || 'Unnamed Outfit'}
-┃ 🗓️ *Established On:* ${info.date || 'Undisclosed Date'}
-┃ 🖼️ *Mugshot Size:* ${info.image?.size_pretty || 'No Visual Intel'}
-┃ 🌍 *The Address:* ${info.url || url}
+        const caption = `╭─❰ \`𝐗𝐓𝐑𝐄𝐌𝐄-𝐗𝐌𝐃\` ❱
+┃ *The Name:* ${info.title || 'Unknown Ops'}
+┃ *The Cover Story:* ${info.description || 'No Official Story'}
+┃ *The Boss/Publisher:* ${info.publisher || 'Unnamed Outfit'}
+┃ *Established On:* ${info.date || 'Undisclosed Date'}
+┃ *Mugshot Size:* ${info.image?.size_pretty || 'No Visual Intel'}
+┃ *The Address:* ${info.url || url}
 ╰──────────────➤
-
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`; // Added FLEX emperor branding
 
         // Fixed image thumbnail - you might want to change this to a more FLEX-style image

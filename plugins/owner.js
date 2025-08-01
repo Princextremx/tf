@@ -1,6 +1,4 @@
 const { cmd } = require('../command');
-const fs = require('fs');
-const path = require('path');
 
 cmd({
   pattern: "owner",
@@ -15,27 +13,21 @@ cmd({
       { number: '+529145550855', name: 'ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ', organization: 'ᴘʀɪɴᴄᴇ ᴛᴇᴀᴍ' }
     ];
 
-    for (let i = 0; i < owners.length; i++) {
-      const owner = owners[i];
-      const vcfContent = `BEGIN:VCARD\n` +
-        `VERSION:3.0\n` +
-        `FN:${owner.name}\n` +
-        `ORG:${owner.organization};\n` +
-        `TEL;TYPE=CELL;TYPE=VOICE:${owner.number}\n` +
-        `END:VCARD`;
-
-      const fileName = `owner_${i}.vcf`;
-      const filePath = path.join(__dirname, fileName);
-      fs.writeFileSync(filePath, vcfContent);
-
+    for (const owner of owners) {
       await conn.sendMessage(from, {
-        document: fs.readFileSync(filePath),
-        fileName: fileName,
-        mimetype: 'text/vcard',
-        caption: `✨ ʜᴇʀᴇ ɪs ᴛʜᴇ ᴄᴏɴᴛᴀᴄᴛ ᴏғ *${owner.name}* ✨`
+        contacts: {
+          displayName: owner.name,
+          contacts: [{
+            vcard:
+              `BEGIN:VCARD\n` +
+              `VERSION:3.0\n` +
+              `FN:${owner.name}\n` +
+              `ORG:${owner.organization}\n` +
+              `TEL;type=CELL;type=VOICE;waid=${owner.number.replace(/\D/g, '')}:${owner.number}\n` +
+              `END:VCARD`
+          }]
+        }
       }, { quoted: mek });
-
-      fs.unlinkSync(filePath);
     }
   } catch (error) {
     console.error(error);

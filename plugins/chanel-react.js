@@ -21,17 +21,11 @@ const stylizedChars = {
 cmd({
 
     pattern: "chr",
-
     alias: ["creact"],
-
     react: "🔤",
-
     desc: "React to channel messages with stylized text",
-
-    category: "👑 owner",
-
+    category: "👑 ᴏᴡɴᴇʀ",
     use: '.chr <channel-link> <text>',
-
     filename: __filename
 
 },
@@ -40,9 +34,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
     try {
 
-        if (!isOwner) return reply("❌ Owner only command");
+        if (!isOwner) return reply("❌ ᴏᴡɴᴇʀ ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅ");
 
-        if (!q) return reply(`Usage:\n${command} https://whatsapp.com/channel/0029VbAffhD2ZjChG9DX922r hello`);
+        if (!q) return reply(`Usage:\n${command} https://whatsapp.com/channel/1234567890 hello`);
 
         const [link, ...textParts] = q.split(' ');
 
@@ -52,7 +46,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         const inputText = textParts.join(' ').toLowerCase();
 
-        if (!inputText) return reply("Please provide text to convert");
+        if (!inputText) return reply("ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴛᴇxᴛ ᴛᴏ ᴄᴏɴᴠᴇʀᴛ");
 
         const emoji = inputText
 
@@ -78,13 +72,13 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         await conn.newsletterReactMessage(channelMeta.id, messageId, emoji);
 
-        return reply(`╭━〔 *𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗* 〕━┈⊷
-┃▸ *Success!* Reaction sent
-┃▸ *Channel:* ${channelMeta.name}
-┃▸ *Reaction:* ${emoji}
+        return reply(`╭─ 「 *\`𝐗𝐓𝐑𝐄𝐌𝐄 𝐗𝐌𝐃\`* 」
+┃▸ *sᴜᴄᴄᴇss!* ʀᴇᴀᴄᴛɪᴏɴ sᴇɴᴛ
+┃▸ *ᴄʜᴀɴɴᴇʟ:* ${channelMeta.name}
+┃▸ *ʀᴇᴀᴄᴛɪᴏɴ:* ${emoji}
 ╰────────────────┈⊷
 
-> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`);
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ sɪᴅ*`);
 
     } catch (e) {
 
@@ -96,4 +90,4 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 });
 
-// *ᴘᴏᴡᴇʀᴇᴅ ʙʏ RAHEE CM* 
+// *ᴘᴏᴡᴇʀᴇᴅ ʙʏ DAVINCS* 

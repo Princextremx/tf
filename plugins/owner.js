@@ -2,7 +2,6 @@ const { cmd } = require('../command');
 
 cmd({
   pattern: "owner",
-  react: "💫", 
   alias: ["kerm"],
   desc: "Get owner number",
   category: "⌚ misc",
@@ -10,7 +9,7 @@ cmd({
 }, async (conn, mek, m, { from }) => {
   try {
     const owners = [
-      { number: '+529145550855', name: 'ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ', organization: 'ᴘʀɪɴᴄᴇ ᴛᴇᴀᴍ' }
+      { number: '+52 81 4555 0855', name: 'ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ', organization: 'ᴘʀɪɴᴄᴇ ᴛᴇᴀᴍ' }
     ];
 
     for (const owner of owners) {

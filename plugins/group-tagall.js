@@ -53,7 +53,11 @@ async (conn, mek, m, { from, participants, reply, isGroup, isAdmins, isCreator, 
         const imageUrl = "https://files.catbox.moe/sezpgg.jpg";  // Replace with your image URL or local image path
         const imageBuffer = await getBuffer(imageUrl);
 
-        conn.sendMessage(from, { text: teks, mentions: participants.map(a => a.id) }, { quoted: mek });
+        conn.sendMessage(from, { 
+            image: imageBuffer, 
+            caption: teks, 
+            mentions: participants.map(a => a.id)
+        }, { quoted: mek });
 
     } catch (e) {
         console.error("TagAll Error:", e);

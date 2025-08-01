@@ -40,8 +40,8 @@ async (conn, mek, m, { from, sender, reply, isGroup }) => {
       },
       message: {
         contactMessage: {
-          displayName: " PRINCE SID✅",
-          vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: PRINCE TECH ✅\nORG: 𝑭𝑳𝑬𝑿 𝑨𝑰;\nTEL;type=CELL;type=VOICE;waid=255700000000:+255 700 000000\nEND:VCARD",
+          displayName: "𝐗𝐓𝐑𝐄𝐌𝐄-𝐗𝐌𝐃✅",
+          vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: 𝐗𝐓𝐑𝐄𝐌𝐄-𝐗𝐌𝐃 ✅\nORG: 𝐗𝐓𝐑𝐄𝐌𝐄-𝐗𝐌𝐃;\nTEL;type=CELL;type=VOICE;waid=528145550855:+52 81 4555 0855\nEND:VCARD",
           jpegThumbnail: Buffer.from([])
         }
       }

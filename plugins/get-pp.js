@@ -2,10 +2,10 @@ const { cmd } = require("../command");
 
 cmd({
   pattern: "getpp",
-  alias: [],
+  alias: ["xpp"],
   use: "pp",
   desc: "Get profile picture of a user (replied user in group, or DM user)",
-  category: "tools",
+  category: "🖥️ tools",
   react: "✅",
   filename: __filename
 },
@@ -40,8 +40,8 @@ async (conn, mek, m, { from, sender, reply, isGroup }) => {
       },
       message: {
         contactMessage: {
-          displayName: " DAVINCS TECH ✅",
-          vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: DAVINCS-TECH  ✅\nORG: 𝑭𝑳𝑬𝑿 𝑨𝑰;\nTEL;type=CELL;type=VOICE;waid=255700000000:+255 700 000000\nEND:VCARD",
+          displayName: " PRINCE SID✅",
+          vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: PRINCE TECH ✅\nORG: 𝑭𝑳𝑬𝑿 𝑨𝑰;\nTEL;type=CELL;type=VOICE;waid=255700000000:+255 700 000000\nEND:VCARD",
           jpegThumbnail: Buffer.from([])
         }
       }
@@ -55,8 +55,8 @@ async (conn, mek, m, { from, sender, reply, isGroup }) => {
         forwardingScore: 5,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterName: "FLEX- AI CORE",
-          newsletterJid: "120363318767880951@newsletter"
+          newsletterName: "𝐗𝐓𝐑𝐄𝐌𝐄-𝐗𝐌𝐃",
+          newsletterJid: "120363418161689316@newsletter"
         }
       }
     }, { quoted: fakeVCard });

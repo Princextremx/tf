@@ -4,7 +4,7 @@ const { cmd } = require("../command");
 
 cmd({
     pattern: "adult",
-    alias: ["adultmenu"],
+    alias: ["adultmenu","nfw"],
     desc: "menu the bot",
     category: "🧾 menu",
     react: "🎀",
@@ -12,7 +12,7 @@ cmd({
 }, 
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
-        let dec = `╭───❍「 *18+ CMD🔞* 」❍
+        let dec = `╭───「 *18+ CMD🔞* 」
 ‎├⬡ *.xᴠɪᴅᴇᴏ*
 ‎├⬡ *.ᴘᴏʀɴ*
 ‎├⬡ *.xᴠɪᴅᴇᴏs*

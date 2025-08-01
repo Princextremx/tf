@@ -7,7 +7,7 @@ cmd({
     react: "💫",
     alias: ["addadmin"],
     desc: "Promote a user to admin.",
-    category: "group",
+    category: "⛑️ group",
     filename: __filename
 }, async (conn, mek, m, {
     from,
@@ -62,7 +62,7 @@ cmd({
     react: "🥏",
     alias: ["removeadmin"],
     desc: "Demote a user from admin.",
-    category: "group",
+    category: "⛑️ group",
     filename: __filename
 }, async (conn, mek, m, {
     from,
@@ -115,7 +115,7 @@ cmd({
 cmd({
     pattern: "ginfo",
     desc: "Get group information.",
-    category: "group",
+    category: "⛑️ group",
     filename: __filename,
 }, async (conn, mek, m, {
     from,
@@ -190,7 +190,7 @@ cmd({
     pattern: "kickall",
     desc: "Kicks all non-admin members from the group continuously until stopped.",
     react: "🧨",
-    category: "group",
+    category: "⛑️ group",
     filename: __filename,
 }, async (conn, mek, m, {
     from,
@@ -253,7 +253,7 @@ cmd({
     pattern: "stop",
     desc: "Stops the ongoing kickall process.",
     react: "⏹️",
-    category: "group",
+    category: "⛑️ group",
     filename: __filename,
 }, async (conn, mek, m, { reply }) => {
     stopKickall = true; // Set the stop flag to true
@@ -264,7 +264,7 @@ cmd({
   pattern: "kick",
   desc: "Removes a participant by replying to or mentioning their message. (Admins can also be kicked)",
   react: "🚪",
-  category: "group",
+  category: "⛑️ group",
   filename: __filename,
 }, async (conn, mek, m, {
     from,

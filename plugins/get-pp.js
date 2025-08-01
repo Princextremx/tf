@@ -29,7 +29,7 @@ async (conn, mek, m, { from, sender, reply, isGroup }) => {
     try {
       imageUrl = await conn.profilePictureUrl(targetJid, 'image');
     } catch {
-      imageUrl = "https://files.catbox.moe/z2rr5a.jpg";
+      imageUrl = "https://files.catbox.moe/ee7do3.jpg";
     }
 
     const fakeVCard = {
@@ -49,7 +49,7 @@ async (conn, mek, m, { from, sender, reply, isGroup }) => {
 
     await conn.sendMessage(from, {
       image: { url: imageUrl },
-      caption: `✅ Profile Picture of @${targetJid.split('@')[0]}`,
+      caption: `✅ ᴘʀᴏғɪʟᴇ ᴘɪᴄᴛᴜʀᴇ ᴏғ @${targetJid.split('@')[0]}`,
       contextInfo: {
         mentionedJid: [targetJid],
         forwardingScore: 5,

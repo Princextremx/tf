@@ -1,4 +1,6 @@
 const { cmd } = require('../command');
+const fs = require('fs');
+const path = require('path');
 
 cmd({
   pattern: "owner",
@@ -9,36 +11,32 @@ cmd({
   filename: __filename
 }, async (conn, mek, m, { from }) => {
   try {
-    // Propriétaires' informations de contact
     const owners = [
       { number: '+529145550855', name: 'ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ', organization: 'ᴘʀɪɴᴄᴇ ᴛᴇᴀᴍ' }
     ];
 
-    let contacts = [];
-    owners.forEach((owner) => {
-      const vcard = `BEGIN:VCDCARD\n` +
+    for (let i = 0; i < owners.length; i++) {
+      const owner = owners[i];
+      const vcfContent = `BEGIN:VCARD\n` +
         `VERSION:3.0\n` +
         `FN:${owner.name}\n` +
         `ORG:${owner.organization};\n` +
-        `TEL;type=CELL;type=VOICE;waid=${owner.number.replace('+', '')}:${owner.number}\n` +
+        `TEL;TYPE=CELL;TYPE=VOICE:${owner.number}\n` +
         `END:VCARD`;
-      contacts.push({ vcard });
-    });
 
-    // Envoyer les vCards
-    const sentVCard = await conn.sendMessage(from, { contacts: { displayName: "creators", contacts } });
+      const fileName = `owner_${i}.vcf`;
+      const filePath = path.join(__dirname, fileName);
+      fs.writeFileSync(filePath, vcfContent);
 
-    // Mentionner les deux propriétaires
-    const mentionedJid = owners.map(owner => owner.number.replace('+', '') + '@s.whatsapp.net');
+      await conn.sendMessage(from, {
+        document: fs.readFileSync(filePath),
+        fileName: fileName,
+        mimetype: 'text/vcard',
+        caption: `✨ ʜᴇʀᴇ ɪs ᴛʜᴇ ᴄᴏɴᴛᴀᴄᴛ ᴏғ *${owner.name}* ✨`
+      }, { quoted: mek });
 
-    // Envoyer un message de réponse qui référence les vCards
-    await conn.sendMessage(from, {
-      text: `ʜᴇʀᴇ ɪs ᴛʜᴇ ᴄᴏɴᴛᴀᴄᴛs ᴏғ ᴛʜᴇ ᴄʀᴇᴀᴛᴏʀs :\n\n${owners.map(o => `? ${o.name} : ${o.number}`).join('\n')}`,
-      contextInfo: {
-        mentionedJid,
-        quotedMessageId: sentVCard.key.id
-      }
-    }, { quoted: mek });
+      fs.unlinkSync(filePath);
+    }
   } catch (error) {
     console.error(error);
     await conn.sendMessage(from, {

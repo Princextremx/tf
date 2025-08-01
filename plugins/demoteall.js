@@ -5,7 +5,7 @@ const { cmd } = require("../command");
 cmd({
   pattern: "demoteall",
   desc: "Demote all group admins except the bot and the command user (Owner Only)",
-  category: "group",
+  category: "⛑️ group",
   isOwner: true, // Only the owner can use this command
   use: ".demoteall"
 }, async (conn, mek, m, { from, reply }) => {

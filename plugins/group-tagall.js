@@ -19,7 +19,7 @@ async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAd
         const senderJid = senderNumber + "@s.whatsapp.net";
 
         if (!groupAdmins.includes(senderJid) && senderNumber !== botOwner) {
-            return reply("❌ Only group admins or the bot owner can use this command.");
+            return reply("❌ ᴏɴʟʏ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs ᴏʀ ᴛʜᴇ ʙᴏᴛ ᴏᴡɴᴇʀ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ");
         }
 
         // Ensure group metadata is fetched properly
@@ -30,14 +30,14 @@ async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAd
         let totalMembers = participants ? participants.length : 0;
         if (totalMembers === 0) return reply("❌ No members found in this group.");
 
-        let emojis = ['│➼', '│➻', '│➺', '│➸', '│➵', '│⟺', '│⟹'];
+        let emojis = ['│❉', '│❖', '│❍', '│❂', '│✷', '│☉', '│❋'];
         let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
         // Proper message extraction
         let message = body.slice(body.indexOf(command) + command.length).trim();
-        if (!message) message = "Attention Everyone"; // Default message
+        if (!message) message = "ᴀᴛᴛᴇɴᴛɪᴏɴ ᴇᴠᴇʀʏᴏɴᴇ"; // Default message
 
-        let teks = `➳ Group : *${groupName}*\n➳ Members : *${totalMembers}*\n➳ Message: *${message}*\n\n╭─ 「 *\`XTREME TAG\`* 」\n`;
+        let teks = `╭─ 「 *\`TAG ALL\`* 」\n│✺ ɢʀᴏᴜᴘ : *${groupName}*\n│✺ ᴍᴇᴍʙᴇʀs : *${totalMembers}*\n│✺ ᴍᴇssᴀɢᴇ: *${message}*\n╰─────────────❍\n\n╭─ 「 *\`XTREME TAG\`* 」\n`;
 
         for (let mem of participants) {
             if (!mem.id) continue; // Prevent undefined errors
@@ -47,7 +47,7 @@ async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAd
         teks += "└──❖ 𝐗𝐓𝐑𝐄𝐌𝐄-𝐗𝐌𝐃 ❖──";
 
         // Send the image along with the message
-        const imageUrl = "https://files.catbox.moe/uapifo.jpg";  // Replace with your image URL or local image path
+        const imageUrl = "profilePictureUrl";  // Replace with your image URL or local image path
         const imageBuffer = await getBuffer(imageUrl);
 
         conn.sendMessage(from, { 

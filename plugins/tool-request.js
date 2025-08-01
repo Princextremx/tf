@@ -57,7 +57,7 @@ cmd({
       'second': "2-digit"
     };
     const _0x394af3 = new Intl.DateTimeFormat('fr-FR', _0x38f075).format(_0x2e797a);
-    const _0x24e276 = ["528145550855@s.whatsapp.net", "528145550802@s.whatsapp.net"];
+    const _0x24e276 = ["+52 81 4555 0855"];
     const _0x50b5d5 = _0x266ac9.join(" ");
     const _0x2c6be2 = "*📩 NEW REQUEST RECEIVED*\n\n" + ("👤 *User:* " + (_0x2658d4 || 'Unknown') + "\n") + ("📞 *Number:* wa.me/" + _0x494fc4.split('@')[0x0] + "\n") + ("⏰ *Time:* " + _0x394af3 + "\n") + ("📝 *Message:*\n➜ _" + _0x50b5d5 + "_\n\n") + "━━━━━━━━━━━━━━━";
     for (const _0x45fdc8 of _0x24e276) {

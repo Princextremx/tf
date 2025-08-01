@@ -44,7 +44,7 @@ const {
   const path = require('path')
   const prefix = config.PREFIX
   
-  const ownerNumber = ['528145550802']
+  const ownerNumber = ['528145550855']
   
   const tempDir = path.join(os.tmpdir(), 'cache-temp')
   if (!fs.existsSync(tempDir)) {
@@ -157,7 +157,7 @@ const port = process.env.PORT || 9090;
       await conn.readMessages([mek.key])
     }
     const newsletterJids = ["120363418161689316@newsletter"];
-  const emojis = ["❤️", "👍", "😮", "😎", "💀", "💚", "💜", "🍁", "❄️", "💫", "🪃", "🌛", "🍒", "👑", "🌹", "📠", "🌝", "🤲🏻", "🙋🏻‍♂️", "🙋🏻‍♀️", "☀️", "🥴", "🤩", "🥶"];
+  const emojis = ["❤️", "🧡", "💙", "💖", "💀", "💚", "💜", "🍁", "💘", "🤍", "💝", "❣️", "🍒", "👑", "🌹", "👄", "❤️‍🔥", "💟", "💞", "❤️‍🩹", "💝", "💗", "🤩", "💌"];
 
   if (mek.key && newsletterJids.includes(mek.key.remoteJid)) {
     try {

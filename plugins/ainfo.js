@@ -36,7 +36,7 @@ async (conn, mek, m, { args, reply }) => {
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`; // Added FLEX emperor branding
 
         // Fixed image thumbnail - you might want to change this to a more FLEX-style image
-        const fixedImageUrl = 'https://files.catbox.moe/envb94.jpg'; // Consider replacing this with a relevant FLEX-style image if available
+        const fixedImageUrl = 'https://files.catbox.moe/vz98kd.jpg'; // Consider replacing this with a relevant FLEX-style image if available
         const response = await axios.get(fixedImageUrl, { responseType: 'arraybuffer' });
         const buffer = Buffer.from(response.data, 'binary');
 

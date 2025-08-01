@@ -10,7 +10,7 @@ cmd({
     alias: ["upgrade", "sync"],
     react: '🆕',
     desc: "*ᴜᴘᴅᴀᴛᴇ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴛʜᴇ ʟᴀᴛᴇsᴛ ᴠᴇʀsɪᴏɴ.*",
-    category: "misc",
+    category: "⌚ misc",
     filename: __filename
 }, async (client, message, args, { reply, isOwner }) => {
     if (!isOwner) return reply("*ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴏɴʟʏ ғᴏʀ ᴛʜᴇ ʙᴏᴛ ᴏᴡɴᴇʀ*");

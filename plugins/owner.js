@@ -1,7 +1,3 @@
-
-
-
-
 const { cmd } = require('../command');
 
 cmd({
@@ -15,7 +11,6 @@ cmd({
   try {
     // Propriétaires' informations de contact
     const owners = [
-      { number: '+529145550855', name: 'ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ', organization: 'ᴘʀɪɴᴄᴇ ᴛᴇᴀᴍ' },
       { number: '+529145550855', name: 'ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ', organization: 'ᴘʀɪɴᴄᴇ ᴛᴇᴀᴍ' }
     ];
 
@@ -23,9 +18,9 @@ cmd({
     owners.forEach((owner) => {
       const vcard = `BEGIN:VCDCARD\n` +
         `VERSION:3.0\n` +
-        `FN:${owner.name}\n` +
-        `ORG:${owner.organization};\n` +
-        `TEL;type=CELL;type=VOICE;waid=${owner.number.replace('+', '')}:${owner.number}\n` +
+        `FN:${owners.name}\n` +
+        `ORG:${owners.organization};\n` +
+        `TEL;type=CELL;type=VOICE;waid=${owners.number.replace('+', '')}:${owners.number}\n` +
         `END:VCARD`;
       contacts.push({ vcard });
     });
@@ -51,5 +46,3 @@ cmd({
     }, { quoted: mek });
   }
 });
-
-

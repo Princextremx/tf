@@ -5,7 +5,7 @@ const fetch = require('node-fetch'); // installe avec: npm install node-fetch@2
 cmd({
   pattern: 'chatbot',
   desc: 'Activer ou désactiver le chatbot',
-  category: 'misc',
+  category: '⌚ misc',
   react: '🤖',
   filename: __filename
 }, async (m, { args }) => {

@@ -1,34 +1,33 @@
-const { cmd } = require("../command");
-const fetch = require("node-fetch");
-const axios = require("axios");
-
+const {
+  cmd
+} = require("../command");
 cmd({
-    pattern: "short",
-    alias: ['shorts', 'shorturl'],
-    react: "🫧",
-    desc: "Makes URL tiny.",
-    category: "⌚ misc",
-    use: "<url>",
-    filename: __filename,
-},
-async (conn, mek, m, { from, quoted, isOwner, isAdmins, reply, args }) => {
-    console.log("Command tiny triggered"); // Ajoutez ceci pour vérifier si la commande est déclenchée
-
-    if (!args[0]) {
-        console.log("No URL provided"); // Ajoutez ceci pour vérifier si l'URL est fournie
-        return reply("*🏷️ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀ ʟɪɴᴋ.*");
+  'pattern': "getimage",
+  'desc': "Send an image from a URL.",
+  'category': "⌚ misc",
+  'react': "🖼️",
+  'filename': __filename,
+  'use': ".sendimage <image_url>"
+}, async (_0x2aa314, _0x151f3e, _0xb794d, {
+  reply: _0x3aff39,
+  args: _0x324603
+}) => {
+  try {
+    if (!_0x324603[0x0]) {
+      return _0x3aff39("*_❌ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀɴ ɪᴍᴀɢᴇ ᴜʀʟ!_*");
     }
-
-    try {
-        const link = args[0];
-        console.log("URL to shorten:", link); // Ajoutez ceci pour vérifier l'URL fournie
-        const response = await axios.get(`https://tinyurl.com/api-create.php?url=${link}`);
-        const shortenedUrl = response.data;
-
-        console.log("Shortened URL:", shortenedUrl); // Ajoutez ceci pour vérifier l'URL raccourcie
-        return reply(`*🛡️YOUR SHORTENED URL*\n\n${shortenedUrl}`);
-    } catch (e) {
-        console.error("Error shortening URL:", e);
-        return reply("An error occurred while shortening the URL. Please try again.");
-    }
+    const _0x267549 = _0x324603[0x0];
+    await _0x2aa314.sendMessage(_0xb794d.chat, {
+      'image': {
+        'url': _0x267549
+      },
+      'caption': "*_ʜᴇʀᴇ ɪs ʏᴏᴜʀ ɪᴍᴀɢᴇ!_*",
+      'mimetype': 'image/png'
+    }, {
+      'quoted': _0x151f3e
+    });
+  } catch (_0x2cd13a) {
+    console.error("Error in sendimage command:", _0x2cd13a);
+    _0x3aff39("❌ An error occurred: " + _0x2cd13a.message);
+  }
 });

@@ -16,7 +16,7 @@ cmd({
     pattern: "setsudo",
     alias: ["addsudo", "addowner"],
     desc: "Add a temporary owner",
-    category: "owner",
+    category: "👑 owner",
     react: "😇",
     filename: __filename
 }, async (conn, mek, m, { from, args, q, isCreator, reply }) => {
@@ -56,7 +56,7 @@ cmd({
     pattern: "delsudo",
     alias: ["delowner", "deletesudo"],
     desc: "Remove a temporary owner",
-    category: "owner",
+    category: "👑 owner",
     react: "🫩",
     filename: __filename
 }, async (conn, mek, m, { from, args, q, isCreator, reply }) => {
@@ -94,7 +94,7 @@ cmd({
     pattern: "listsudo",
     alias: ["listowner"],
     desc: "List all temporary owners",
-    category: "owner",
+    category: "👑 owner",
     react: "📋",
     filename: __filename
 }, async (conn, mek, m, { from, isCreator, reply }) => {

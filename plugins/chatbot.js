@@ -1,61 +1,81 @@
+const axios = require('axios');
+const config = require('../../config.cjs');
 const { cmd } = require('../command');
-const fetch = require('node-fetch'); // installe avec: npm install node-fetch@2
 
-// Commande pour activer/désactiver le chatbot
 cmd({
-  pattern: 'chatbot',
-  desc: 'Activer ou désactiver le chatbot',
-  category: '⌚ misc',
-  react: '🤖',
-  filename: __filename
-}, async (m, { args }) => {
-  if (!args[0]) return m.reply('Usage: chatbot on/off');
+    pattern: "chatbot",
+    desc: "Enable or disable chatbot",
+    category: "⌚ misc",
+    filename: __filename
+},
+async (Matrix, m, { text, command }) => {
+    const botNumber = await Matrix.decodeJid(Matrix.user.id);
+    const isCreator = [botNumber, config.OWNER_NUMBER + '@s.whatsapp.net'].includes(m.sender);
 
-  const status = args[0].toLowerCase();
-  if (status !== 'on' && status !== 'off') return m.reply('Utilise "on" ou "off" uniquement.');
+    if (!isCreator) return m.reply("*Only admin*");
 
-  global.chatbotStatus = global.chatbotStatus || {};
-  global.chatbotStatus[m.chat] = status === 'on';
+    let responseMessage;
 
-  return m.reply(`🤖 Chatbot est maintenant *${status.toUpperCase()}* pour ce chat.`);
-});
-
-
-// Listener pour répondre automatiquement avec l'API Blackbox
-const setupChatbotListener = (client) => {
-  client.ev.on('messages.upsert', async ({ messages }) => {
-    const msg = messages[0];
-    if (!msg.message || msg.key.fromMe) return;
-
-    const from = msg.key.remoteJid;
-    const sender = msg.key.participant || msg.key.remoteJid;
-    const text = msg.message.conversation || msg.message.extendedTextMessage?.text;
-
-    if (!text) return;
-    global.chatbotStatus = global.chatbotStatus || {};
-    if (!global.chatbotStatus[from]) return;
-
-    const botJid = client.user.id.split(':')[0] + '@s.whatsapp.net';
-    if (sender === botJid) return;
+    if (text === 'on') {
+        config.CHATBOT = true;
+        responseMessage = "Chatbot has been enabled.";
+    } else if (text === 'off') {
+        config.CHATBOT = false;
+        responseMessage = "Chatbot has been disabled.";
+    } else {
+        responseMessage = "Usage:\n- `chatbot on`: Enable Chatbot\n- `chatbot off`: Disable Chatbot";
+    }
 
     try {
-      await client.sendMessage(from, { react: { text: '💬', key: msg.key } });
-
-      const query = encodeURIComponent(text);
-      const res = await fetch(`https://api.blackbox.cool/api/chatbot?msg=${query}`);
-      const data = await res.json();
-
-      if (data.success) {
-        await client.sendMessage(
-          from,
-          { text: data.response, mentions: [sender] },
-          { quoted: msg }
-        );
-      }
-    } catch (e) {
-      console.log('Chatbot API error:', e);
+        await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m });
+    } catch (error) {
+        console.error("Error processing your request:", error);
+        await Matrix.sendMessage(m.from, { text: 'Error processing your request.' }, { quoted: m });
     }
-  });
-};
 
-module.exports = { setupChatbotListener };
+    if (config.CHATBOT) {
+        const mek = m;
+        if (!mek.message || mek.key.fromMe) return;
+
+        const from = mek.key.remoteJid;
+        const sender = mek.key.participant || from;
+        const isGroup = from.endsWith('@g.us');
+        const msgText = mek.body || '';
+
+        if (isGroup) {
+            const isMentioned = mek.message?.extendedTextMessage?.contextInfo?.mentionedJid?.includes(Matrix.user.id);
+            const isQuoted = mek.message?.extendedTextMessage?.contextInfo?.participant === Matrix.user.id;
+            const isReplied = mek.message?.extendedTextMessage?.contextInfo?.stanzaId && mek.message?.extendedTextMessage?.contextInfo?.participant === Matrix.user.id;
+            if (!isMentioned && !isQuoted && !isReplied) return;
+        }
+
+        if (!global.userChats) global.userChats = {};
+        if (!global.userChats[sender]) global.userChats[sender] = [];
+
+        global.userChats[sender].push(`User: ${msgText}`);
+        if (global.userChats[sender].length > 15) global.userChats[sender].shift();
+
+        const userHistory = global.userChats[sender].join("\n");
+
+        const prompt = `
+You are inconnu-xd_ᴠ2, a friendly WhatsApp bot.
+
+### Conversation History:
+${userHistory}
+        `;
+
+        try {
+            const { data } = await axios.get("https://mannoffc-x.hf.space/ai/logic", {
+                params: { q: msgText, logic: prompt }
+            });
+
+            const botResponse = data.result;
+            global.userChats[sender].push(`Bot: ${botResponse}`);
+
+            await Matrix.sendMessage(from, { text: botResponse }, { quoted: mek });
+        } catch (error) {
+            console.error('Error in chatbot response:', error);
+            await Matrix.sendMessage(m.from, { text: 'Error processing your request.' }, { quoted: m });
+        }
+    }
+});

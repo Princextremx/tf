@@ -13,7 +13,7 @@ cmd({
     use: '.yts sameer kutti',
     react: "🔎",
     desc: "Search and get details from youtube.",
-    category: "search",
+    category: "download",
     filename: __filename
 
 },

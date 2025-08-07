@@ -4,7 +4,7 @@ const axios = require('axios');
 cmd({
     pattern: "hentai",
     desc: "Sends a random hentai video.",
-    category: "anime",
+    category: "main",
     filename: __filename,
 }, async (conn, mek, m, { reply }) => {
     try {

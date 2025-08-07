@@ -41,8 +41,8 @@ cmd({
   alias: ["allmenu", "prince"],
   use: '.menu',
   desc: "Show all bot commands",
-  category: "🧾 menu",
-  react: "❄️",
+  category: "menu",
+  react: "💫",
   filename: __filename
 },
 async (conn, mek, m, { from, reply }) => {

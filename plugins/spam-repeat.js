@@ -6,7 +6,7 @@ const {
 cmd({
   'pattern': "spam",
   'desc': "Repeat a provided phrase a specified number of times (owner only).",
-  'category': "admin",
+  'category': "tools",
   'react': '📣',
   'filename': __filename,
   'use': '<text>|<number>'

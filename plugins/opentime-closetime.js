@@ -83,7 +83,7 @@ cmd({
     alias: ["staff"],
     react: "📣",
     desc: "Tags all the admins in the group.",
-    category: "⛑️ group",
+    category: "group",
     filename: __filename,
 },           
 async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -98,14 +98,13 @@ try{
             return reply('There are no admins in this group.');
         }
         // Create a message with all admin tags
-        let adminTagMessage = `╭─ 「 *\`𝐓𝐀𝐆𝐀𝐃𝐌𝐈𝐍𝐒 💫\`* 」\n`;
+        let adminTagMessage = '╭─ 「 *\`TAGADMINS\`* 」\n`;
 
-       for (let admin of admins) {
-            adminTagMessage += `│ @${admin.split('@')[0]}\n`;
+        for (let admin of admins) {
+            if (!admin.split) continue;
+            teks += `│ @${admin.split('@')[0]}\n`;
         }
-
-        teks += "╰────────────────❍";
-        
+         teks += "╰────────────────❍`;  
          // Mention each admin by their number
         }
         // Send the message and tag the admins
@@ -115,7 +114,6 @@ try{
         reply('you are not an admin.');
     }
 })
-
 
 cmd({
     pattern: "mute",	

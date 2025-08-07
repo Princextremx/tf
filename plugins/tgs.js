@@ -9,7 +9,7 @@ cmd({
   alias: ['tgsticker', 'telegramsticker'],
   react: '🎴',
   desc: 'Download and convert Telegram sticker packs to WhatsApp stickers',
-  category: 'Mods',
+  category: 'utility',
   filename: __filename
 }, async (conn, mek, m, { from, reply, args, sender, isAdmin }) => {
   try {

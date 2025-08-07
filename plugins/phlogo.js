@@ -6,7 +6,7 @@ cmd({
     alias: ["pornhub", "ph"],
     desc: "*ɢéɴéʀᴇ ᴜɴ ʟᴏɢᴏ ᴘᴏʀɴʜᴜʙ ᴀᴠᴇᴄ ᴅᴇᴜx ᴛᴇxᴛᴇs*",
     react: "👨🏻‍🎨",
-    category: "logo",
+    category: "info",
     filename: __filename,
 }, 
 async (conn, mek, m, {

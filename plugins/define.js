@@ -8,7 +8,7 @@ const axios = require('axios');
                              pattern: "define",
                              desc: "📚 Get the definition of a word",
                              react: "🧠",
-                             category: "Auther",
+                             category: "utility",
                              filename: __filename
                          },
                          async (conn, mek, m, { from, q, reply }) => {

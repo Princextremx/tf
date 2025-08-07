@@ -11,7 +11,7 @@ cmd(
         pattern: 'take',
         alias: ['steal', 'stake'],
         desc: 'Create a sticker with a custom pack name.',
-        category: 'sticker',
+        category: 'owner',
         use: '<reply media or URL>',
         filename: __filename,
     },
@@ -54,7 +54,7 @@ cmd({
     react: '🤹‍♀️',
     alias: ['s', 'stickers', 'take'],
     desc: descg,
-    category: 'convert',
+    category: 'owner',
     use: '.sticker <Reply to image>',
     filename: __filename
 }, async (conn, mek, m, { from, reply, isCmd, command, args, q, isGroup, pushname }) => {

@@ -96,7 +96,7 @@ async function loadSession() {
 
         if (config.SESSION_ID.startsWith('XTREME-XMD**')) {
             console.log('Downloading Xcall session...');
-            const sessdata = config.SESSION_ID.replace("XTREME-XMD**", '');
+            const sessdata = config.SESSION_ID.replace("XTREME-XMD**");
             const response = await axios.get(`https://dave-auth-manager.onrender.com/files/${sessdata}.json`,
             );
 

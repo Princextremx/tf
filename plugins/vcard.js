@@ -7,7 +7,7 @@ cmd(
         pattern: "vcard",
         react: "📲",
         desc: "Create a contact card (vCard) from a replied message.",
-        category: "general",
+        category: "utility",
         filename: __filename,
     },
     async (conn, mek, m, { quoted, args, reply }) => {

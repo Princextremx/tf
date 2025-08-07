@@ -22,7 +22,7 @@ async (conn, mek, m, { from, sender, pushname, reply }) => {
 *│◓ ᴘʟᴀᴛғᴏʀᴍ : GitHub*
 *│◓ ᴍᴏᴅᴇ : [${config.MODE}]*
 *│◓ ᴘʀᴇғɪx : {${config.PREFIX}}*
-*│◓ ᴠᴇʀsɪᴏɴ : 1.0.0 Bᴇᴛᴀ*
+*│◓ ᴠᴇʀsɪᴏɴ : 2.0.0 Bᴇᴛᴀ*
 *└────────────────⊷*
 
 *╭∘─「 \`𝐌𝐄𝐍𝐔 𝐋𝐈𝐒𝐓\`」*

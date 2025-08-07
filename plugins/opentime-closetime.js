@@ -79,37 +79,68 @@ l(e)
 
 
 cmd({
-    pattern: "tagadmin",
+    pattern: "tagadmins",
+    react: "🔊",
     alias: ["staff"],
-    react: "📣",
-    desc: "Tags all the admins in the group.",
+    desc: "To Tag all Members",
     category: "group",
-    filename: __filename,
-},           
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-        // Check if the command is used in a group
-        if (!isGroup) return reply(`This command is only for groups.`);
-        if (!isAdmins) return reply(`This command is only for group admin.`);
+    use: '.tagall [message]',
+    filename: __filename
+},
+async (conn, mek, m, { from, participants, reply, isGroup, isAdmins, isCreator, prefix, command, args, body }) => {
+    try {
+        // ✅ Group check
+        if (!isGroup) {
+            await conn.sendMessage(from, { react: { text: '❌', key: m.key } });
+            return reply("❌ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ɪɴ ɢʀᴏᴜᴘs.");
+        }
+
+        // ✅ Permission check (Admin OR Bot Owner)
+        if (!isAdmins && !isCreator) {
+            await conn.sendMessage(from, { react: { text: '❌', key: m.key } });
+            return reply("❌ ᴏɴʟʏ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs ᴏʀ ᴛʜᴇ ʙᴏᴛ ᴏᴡɴᴇʀ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.");
+        }
+
+        // ✅ Fetch group info
+        let groupInfo = await conn.groupMetadata(from).catch(() => null);
+        if (!groupInfo) return reply("❌ ғᴀɪʟᴇᴅ ᴛᴏ ғᴇᴛᴄʜ ɢʀᴏᴜᴘ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.");
+
+        let groupName = groupInfo.subject || "Unknown Group";
+        let totalMembers = participants ? participants.length : 0;
+        if (totalMembers === 0) return reply("❌ ɴᴏ ᴍᴇᴍʙᴇʀs ғᴏᴜɴᴅ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ.");
+
+        let emojis = ['│❉', '│❖', '│❍', '│❂', '│✷', '│☉', '│❋'];
+        let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+        // ✅ Extract message
+        let message = body.slice(body.indexOf(command) + command.length).trim();
+        if (!message) message = "ᴀᴛᴛᴇɴᴛɪᴏɴ ᴇᴠᴇʀʏᴏɴᴇ";
+
+        let teks = `╭─ 「 *\`𝐓𝐀𝐆𝐀𝐃𝐌𝐈𝐍𝐒 💫\`* 」\n`;
+
+        for (let mem of participants) {
+            if (!mem.id) continue;
+            teks += `${randomEmoji} @${admin.split('@')[0]}\n`;
+        }
+
+        teks += "╰────────────────❍";
         
-        // Fetch all group admins
-        const admins = groupAdmins;
-        if (admins.length === 0) {
-            return reply('There are no admins in this group.');
-        }
-        // Create a message with all admin tags
-        let adminTagMessage = '╭─ 「 *\`TAGALL ADMIN\`* 」\n';
-        for (let admin of admins) {
-            adminTagMessage += `│@${admin.split('@')[0]}\n
-            ╰────────────────❍`;  // Mention each admin by their number
-        }
-        // Send the message and tag the admins
-        await conn.sendMessage(from, { text: adminTagMessage, mentions: admins }, { quoted: mek });
+         // Send the image along with the message
+        const imageUrl = "https://files.catbox.moe/38jyw3.jpg";  // Replace with your image URL or local image path
+        const imageBuffer = await getBuffer(imageUrl);
+
+        conn.sendMessage(from, { 
+            image: imageBuffer, 
+            caption: teks, 
+            mentions: participants.map(a => a.id)
+        }, { quoted: mek });
+
     } catch (e) {
-        console.error('Error tagging admins:', e);
-        reply('you are not an admin.');
+        console.error("TagAll Error:", e);
+        reply(`❌ *Error Occurred !!*\n\n${e.message || e}`);
     }
-})
+});
+
 
 cmd({
     pattern: "mute",	

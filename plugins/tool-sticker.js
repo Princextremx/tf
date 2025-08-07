@@ -19,7 +19,7 @@ cmd(
     pattern: 'vsticker',
     alias: ['gsticker', 'g2s', 'gs', 'v2s', 'vs',],
     desc: 'Convert GIF/Video to a sticker.',
-    category: 'sticker',
+    category: 'tools',
     use: '<reply media or URL>',
     react: "❄️",
     filename: __filename,
@@ -41,7 +41,7 @@ cmd(
 
       // Generate sticker metadata
       const sticker = new Sticker(webpBuffer, {
-        pack: config.STICKER_NAME || 'My Pack',
+        pack: config.STICKER_NAME || '𖢗🌹᪳𝐈𝐓𝐒 𝐌𝐄🍀᪳𝐏𝐑𝐈𝐍𝐂𝐄 𝐒𝐈𝐃™🍎᪳𖢗',
         author: '', // Leave blank or customize
         type: StickerTypes.FULL, // FULL for regular stickers
         categories: ['🤩', '🎉'], // Emoji categories
@@ -65,7 +65,7 @@ cmd({
     pattern: "attp",
     desc: "Convert text to a GIF sticker.",
     react: "✨",
-    category: "convert",
+    category: "tools",
     use: ".attp HI",
     filename: __filename,
 }, async (conn, mek, m, { args, reply }) => {

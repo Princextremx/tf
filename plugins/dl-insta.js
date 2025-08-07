@@ -16,7 +16,7 @@ async (conn, mek, m, { from, args, q, reply, react }) => {
         if (!q) return reply("Please provide an Instagram post or reel link.");
         if (!q.includes("instagram.com")) return reply("Invalid Instagram link.");
 
-        const apiUrl = `https://delirius-apiofc.vercel.app/download/igv2?url=${q}`;
+        const apiUrl = `https://api-aswin-sparky.koyeb.app/api/downloader/igdl?url=${encodeURIComponent(url)}`;
         const { data } = await axios.get(apiUrl);
 
         if (!data.status || !data.data) {
@@ -26,10 +26,10 @@ async (conn, mek, m, { from, args, q, reply, react }) => {
 
         const { username, fullname, caption, likes, comments, followed, download } = data.data;
 
-        const captionText = `📸 *Instagram Post* 📸\n\n` +
-                            `👤 *User:* ${fullname} (@${username})\n` +
-                            `❤️ *Likes:* ${likes}\n💬 *Comments:* ${comments}\n👥 *Followers:* ${followed}\n` +
-                            `📝 *Caption:*\n${caption || "No caption available."}`;
+        const captionText = `📸 *ɪɴsᴛᴀɢʀᴀᴍ ᴘᴏsᴛ* 📸\n\n` +
+                            `👤 *ᴜsᴇʀ:* ${fullname} (@${username})\n` +
+                            `❤️ *ʟɪᴋᴇs:* ${likes}\n💬 *Comments:* ${comments}\n👥 *ғᴏʟʟᴏᴡᴇʀs:* ${followed}\n` +
+                            `📝 *ᴄᴀᴘᴛɪᴏɴ:*\n${caption || "ɴᴏ ᴄᴀᴘᴛɪᴏɴ ᴀᴠᴀɪʟᴀʙʟᴇ."}`;
 
         for (const media of download) {
             if (media.type === "image") {

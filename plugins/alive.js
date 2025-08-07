@@ -13,7 +13,7 @@ cmd({
     pattern: "alive",
     desc: "Check if the bot is active.",
     category: "info",
-    react: "🤩",
+    react: "👋",
     filename: __filename
 }, async (conn, mek, m, { reply, from }) => {
     try {
@@ -29,7 +29,7 @@ cmd({
         const formattedInfo = `╭─ 「 *\`𝐗𝐓𝐑𝐄𝐌𝐄 𝐗𝐌𝐃\`* 」
 │✨ *ʙᴏᴛ ɪs ᴀᴄᴛɪᴠᴇ & ᴏɴʟɪɴᴇ!*
 │🧠 *ᴏᴡɴᴇʀ:* ${config.OWNER_NAME}
-│⚡ *ᴠᴇʀsɪᴏɴ:* 1.0.0
+│⚡ *ᴠᴇʀsɪᴏɴ:* 2.0.0
 │🕒 *ᴛɪᴍᴇ* : ${currentTime}
 │📳 *ᴍᴏᴅᴇ:* [${config.MODE}]
 │📅 *ᴅᴀᴛᴇ* : ${currentDate}

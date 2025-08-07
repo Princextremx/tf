@@ -103,7 +103,7 @@ try{
             if (!admin.split) continue;
             teks += `│ @${admin.split('@')[0]}\n`;
         }
-         teks += "╰────────────────❍`;  
+         teks += `╰────────────────❍`;  
          // Mention each admin by their number
         }
         // Send the message and tag the admins

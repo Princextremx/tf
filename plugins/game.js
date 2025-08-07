@@ -6,7 +6,7 @@ const { cmd } = require("../command");
 cmd({
   pattern: "squidgame",
   desc: "Lancer le jeu Squid Game dans un groupe",
-  category: "fun",
+  category: "game",
   filename: __filename
 }, async (conn, mek, m, { isAdmin, isOwner, participants, reply }) => {
   try {

@@ -98,9 +98,8 @@ try{
             return reply('There are no admins in this group.');
         }
         // Create a message with all admin tags
-        let adminTagMessage = '╭─ 「 *TAGADMINS* 」\n`;
-
-        for (let admin of admins) {
+        let adminTagMessage = '╭─ 「 *\`TAGADMINS\`* 」\n';
+         for (let admin of admins) {
             if (!admin.split) continue;
             teks += `│ @${admin.split('@')[0]}\n`;
         }

@@ -9,7 +9,7 @@ cmd({
   react: "💫", 
   alias: ["kerm"],
   desc: "Get owner number",
-  category: "⌚ misc",
+  category: "misc",
   filename: __filename
 }, async (conn, mek, m, { from }) => {
   try {

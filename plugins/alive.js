@@ -59,7 +59,7 @@ cmd({
         
         // Send the audio file with context info
         await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/uk7saw.mp3' },
+            audio: { url: 'https://files.catbox.moe/oshm4v.mp3' },
             mimetype: 'audio/mp4',
             ptt: true,
             contextInfo: { 
@@ -67,7 +67,7 @@ cmd({
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363398101781980@newsletter',
+                    newsletterJid: '120363418161689316@newsletter',
                     newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗🎶',
                     serverMessageId: 143
                 }

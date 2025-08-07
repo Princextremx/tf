@@ -24,7 +24,7 @@ cmd({
     alias: ["creact"],
     react: "🔤",
     desc: "React to channel messages with stylized text",
-    category: "👑 owner",
+    category: "owner",
     use: '.chr <channel-link> <text>',
     filename: __filename
 

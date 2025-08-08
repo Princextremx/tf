@@ -98,7 +98,7 @@ cmd({
     if (_0x39a02f.status !== 0xc8 || !_0x39a02f.success || !_0x39a02f.result.downloadUrl) {
       return _0x258b45("Failed to fetch the audio. Please try again later.");
     }
-    let _0x161add = "╔═══〔 *XTREME XMD* 〕═══❒\n║╭───────────────◆  \n║│ *CMD FOR=> 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆*\n║╰───────────────◆\n╚══════════════════❒\n╔══════════════════❒\n║ ⿻ *ᴛɪᴛʟᴇ:*  " + _0x255517.title + "\n║ ⿻ *ᴅᴜʀᴀᴛɪᴏɴ:*  " + _0x255517.timestamp + "\n║ ⿻ *ᴠɪᴇᴡs:*  " + _0x255517.views + "\n║ ⿻ *ᴀᴜᴛʜᴏʀ:*  " + _0x255517.author.name + "\n║ ⿻ *ʟɪɴᴋ:*  " + _0x255517.url + "\n╚══════════════════❒\n*ғꪮʀ ʏꪮꪊ ғꪮʀ ᴀʟʟ ꪮғ ᴀꜱ 🍉*";
+    let _0x161add = "╭─ 「 *\`XTREME YTA\`* 」\n│ ⿻ *ᴛɪᴛʟᴇ:*  " + _0x255517.title + "\n│ ⿻ *ᴅᴜʀᴀᴛɪᴏɴ:*  " + _0x255517.timestamp + "\n│ ⿻ *ᴠɪᴇᴡs:*  " + _0x255517.views + "\n│ ⿻ *ᴀᴜᴛʜᴏʀ:*  " + _0x255517.author.name + "\n│ ⿻ *ʟɪɴᴋ:*  " + _0x255517.url + "\n╰─────────────⭑─➤\n*ғꪮʀ ʏꪮꪊ ғꪮʀ ᴀʟʟ ꪮғ ᴀꜱ 🍉*";
     await _0xa01491.sendMessage(_0x260fff, {
       'image': {
         'url': _0x39a02f.result.image || ''
@@ -121,7 +121,7 @@ cmd({
       },
       'mimetype': "audio/mpeg",
       'fileName': _0x39a02f.result.title + ".mp3",
-      'caption': "> *_ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ_*"
+      'caption': "> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*"
     }, {
       'quoted': _0xd285e7
     });

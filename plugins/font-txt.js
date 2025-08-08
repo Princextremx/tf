@@ -1,5 +1,5 @@
 const { cmd } = require('../command');
-const fancy = require('../commandes/style');
+const fancy = require('../lib/style');
 
 cmd({
     pattern: "fancy",
@@ -24,7 +24,7 @@ async (conn, mek, m, { from, args, prefix, reply }) => {
         // Si aucun argument → afficher la liste numérotée
         if (!args.length) {
             return reply(
-                `EXAMPLE: ${prefix}FANCY 10 XTREME XMD\n` +
+                `EXAMPLE: .FANCY 10 XTREME XMD\n` +
                 String.fromCharCode(8206).repeat(4001) + 
                 getNumberedList('XTREME XMD')
             );
@@ -33,7 +33,7 @@ async (conn, mek, m, { from, args, prefix, reply }) => {
         // Si id ou texte manquant
         if (!id || !text) {
             return reply(
-                `EXAMPLE: ${prefix} FANCY 10 XTREME XMD\n` +
+                `EXAMPLE: .FANCY 10 XTREME XMD\n` +
                 String.fromCharCode(8206).repeat(4001) + 
                 getNumberedList('XTREME XMD')
             );

@@ -15,9 +15,9 @@ async (conn, mek, m, { from, args, prefix, reply }) => {
 
         if (!id || !text) {
             return reply(
-                `Example: ${prefix}fancy 10 XTREME-XMD\n` +
+                `╭─ 「 *\`LIST FANCY\`* 」\nᴇxᴀᴍᴘʟᴇ: .ғᴀɴᴄʏ 10 xᴛʀᴇᴍᴇ-xᴍᴅ\n` +
                 String.fromCharCode(8206).repeat(4001) + 
-                fancy.list('XTREME-XMD', fancy)
+                fancy.list('XTREME XMD', fancy)
             );
         }
 
@@ -25,7 +25,7 @@ async (conn, mek, m, { from, args, prefix, reply }) => {
         if (selectedStyle) {
             return reply(fancy.apply(selectedStyle, text));
         } else {
-            return reply('_Style not found :(_');
+            return reply('_sᴛʏʟᴇ ɴᴏᴛ ғᴏᴜɴᴅ :(_');
         }
     } catch (error) {
         console.error(error);

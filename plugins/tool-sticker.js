@@ -17,11 +17,11 @@ const config = require("../config");
 cmd(
   {
     pattern: 'vsticker',
-    alias: ['gsticker', 'g2s', 'gs', 'v2s', 'vs',],
+    alias: ['sticker', 'g2s', 's', 'v2s', 'vs',],
     desc: 'Convert GIF/Video to a sticker.',
     category: 'tools',
     use: '<reply media or URL>',
-    react: "❄️",
+    react: "🤹🏻",
     filename: __filename,
   },
   async (conn, mek, m, { quoted, args, reply }) => {

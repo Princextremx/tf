@@ -4,7 +4,7 @@ const config = require('../config');
 cmd({
     pattern: "promoteall",
     desc: "Promotes all group members to admin",
-    category: "admin",
+    category: "group",
     filename: __filename
 },
 async (conn, mek, m, {

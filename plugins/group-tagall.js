@@ -38,9 +38,9 @@ async (conn, mek, m, { from, participants, reply, isGroup, isAdmins, isCreator, 
 
         // ✅ Extract message
         let message = body.slice(body.indexOf(command) + command.length).trim();
-        if (!message) message = "ᴀᴛᴛᴇɴᴛɪᴏɴ ᴇᴠᴇʀʏᴏɴᴇ";
+        if (!message) message = "ʜɪ ᴇᴠᴇʀʏᴏɴᴇ";
 
-        let teks = `╭─ 「 *\`X TAGALL\`* 」\n│✺ ɢʀᴏᴜᴘ : *${groupName}*\n│✺ ᴍᴇᴍʙᴇʀs : *${totalMembers}*\n│✺ ᴍᴇssᴀɢᴇ: *${message}*\n`;
+        let teks = `╭─ 「 *\`BOT TAGALL\`* 」\n│☉ ɢʀᴏᴜᴘ : *${groupName}*\n│☉ ᴍᴇᴍʙᴇʀs : *${totalMembers}*\n│☉ ᴍᴇssᴀɢᴇ: *${message}*\n`;
 
         for (let mem of participants) {
             if (!mem.id) continue;

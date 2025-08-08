@@ -24,18 +24,18 @@ async (conn, mek, m, { from, args, prefix, reply }) => {
         // Si aucun argument → afficher la liste numérotée
         if (!args.length) {
             return reply(
-                `Example: ${prefix}fancy 10 XTREME-XMD\n` +
+                `EXAMPLE: ${prefix}FANCY 10 XTREME XMD\n` +
                 String.fromCharCode(8206).repeat(4001) + 
-                getNumberedList('XTREME-XMD')
+                getNumberedList('XTREME XMD')
             );
         }
 
         // Si id ou texte manquant
         if (!id || !text) {
             return reply(
-                `Example: ${prefix}fancy 10 XTREME-XMD\n` +
+                `EXAMPLE: ${prefix} FANCY 10 XTREME XMD\n` +
                 String.fromCharCode(8206).repeat(4001) + 
-                getNumberedList('XTREME-XMD')
+                getNumberedList('XTREME XMD')
             );
         }
 

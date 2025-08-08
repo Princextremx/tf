@@ -8,13 +8,13 @@ cmd({
     pattern: "menu2",
     desc: "menu the bot",
     category: "menu",
-    react: "📜",
+    react: "🧾",
     filename: __filename
 },
 async (conn, mek, m, { from, sender, pushname, reply }) => {
     try {
         const dec = `*┌──❖*
-*│*         「𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗」
+*│*      「𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗」
 *└─┬❖*
 *┌─┤ 🌙 ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 💫*
 *│   └───────────────❍*
@@ -43,7 +43,7 @@ _ᴄʜᴏᴏsᴇ ᴡɪᴛʜ ᴀ ɴᴜᴍʙᴇʀ (1–10) ᴛᴏ ᴠɪᴇᴡ ᴛ�
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/vtbi4a.jpg` },
+                image: { url: `https://files.catbox.moe/0nbd80.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],

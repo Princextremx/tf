@@ -43,11 +43,19 @@ async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAd
 
         teks += "╰────────────────❍\n> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*";
 
-        conn.sendMessage(from, { text: teks, mentions: admins }, { quoted: mek });
+        // Send the image along with the message
+        const imageUrl = "https://files.catbox.moe/2loc7s.jpg";  // Replace with your image URL or local image path
+        const imageBuffer = await getBuffer(imageUrl);
+
+        conn.sendMessage(from, { 
+            image: imageBuffer, 
+            caption: teks, 
+            mentions: participants.map(a => a.id)
+        }, { quoted: mek });
 
     } catch (e) {
         console.error("TagAdmins Error:", e);
         reply(`❌ *Error Occurred !!*\n\n${e.message || e}`);
     }
 });
-
+          

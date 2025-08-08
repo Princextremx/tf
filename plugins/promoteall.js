@@ -5,7 +5,6 @@ cmd({
     pattern: "promoteall",
     desc: "Promotes all group members to admin",
     category: "admin",
-    react: "⬆️",
     filename: __filename
 },
 async (conn, mek, m, {

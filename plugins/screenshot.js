@@ -1,5 +1,4 @@
-
-
+// code by ⿻ ⌜ 𝐊𝐇𝐀𝐍 ⌟⿻⃮͛🇵🇰𖤐
 
 const axios = require("axios");
 const config = require('../config');
@@ -8,7 +7,7 @@ const { cmd } = require('../command');
 cmd({
   pattern: "ss",
   alias: ["ssweb"],
-  react: "🚀",
+  react: "💫",
   desc: "Download screenshot of a given link.",
   category: "other",
   use: ".ss <link>",
@@ -21,18 +20,18 @@ async (conn, mek, m, {
   isBotAdmins, isAdmins, reply 
 }) => {
   if (!q) {
-    return reply("*_ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴜʀʟ ᴛᴏ ᴄᴀᴘᴛᴜʀᴇ ᴀ sᴄʀᴇᴇɴsʜᴏᴛ_*");
+    return reply("_*ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴜʀʟ ᴛᴏ ᴄᴀᴘᴛᴜʀᴇ ᴀ sᴄʀᴇᴇɴsʜᴏᴛ*_");
   }
 
   try {
-    
-    const response = await axios.get(`https://bk9.fun/tools/screenshot?device=tablet&url= ${q}`);
+    // created by jawad tech 
+    const response = await axios.get(`https://api.davidcyriltech.my.id/ssweb?url=${q}`);
     const screenshotUrl = response.data.screenshotUrl;
 
     // give credit and use
     const imageMessage = {
       image: { url: screenshotUrl },
-      caption: "*sᴄʀᴇᴇɴsʜᴏᴏᴛs ᴡᴇʙ*\n\n> *© ʙʏ xᴛʀᴇᴍᴇ xᴍᴅ🌟*",
+      caption: "*ʏᴏᴜʀ sᴄʀᴇᴇɴ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n\n> *_ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ_*",
       contextInfo: {
         mentionedJid: [m.sender],
         forwardingScore: 999,
@@ -48,6 +47,8 @@ async (conn, mek, m, {
     await conn.sendMessage(from, imageMessage, { quoted: m });
   } catch (error) {
     console.error(error);
-    reply("Failed to capture the screenshot. Please try again.");
+    reply("*ғᴀɪʟᴇᴅ ᴛᴏ ᴄᴀᴘᴛᴜʀᴇ ᴛʜᴇ sᴄʀᴇᴇɴsʜᴏᴛ. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ*");
   }
 });
+
+// ⿻ ⌜ XTREME ⌟⿻⃮͛𖤐

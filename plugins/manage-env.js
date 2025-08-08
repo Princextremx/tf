@@ -12,7 +12,7 @@ const { writeFileSync } = require('fs');
 const path = require('path');
 
 cmd({
-    pattern: "antipromote",
+    pattern: "antipromotte",
     alias: ["adminevents"],
     desc: "Enable or disable admin event notifications",
     category: "settings",

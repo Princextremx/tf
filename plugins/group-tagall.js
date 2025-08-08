@@ -40,7 +40,7 @@ async (conn, mek, m, { from, participants, reply, isGroup, isAdmins, isCreator, 
         let message = body.slice(body.indexOf(command) + command.length).trim();
         if (!message) message = "ᴀᴛᴛᴇɴᴛɪᴏɴ ᴇᴠᴇʀʏᴏɴᴇ";
 
-        let teks = `╭─ 「 *\`X TAGALL\`* 」\n│✺ ɢʀᴏᴜᴘ : *${groupName}*\n│✺ ᴍᴇᴍʙᴇʀs : *${totalMembers}*\n│✺ ᴍᴇssᴀɢᴇ: *${message}*\n╰─────────────❍\n`;
+        let teks = `╭─ 「 *\`X TAGALL\`* 」\n│✺ ɢʀᴏᴜᴘ : *${groupName}*\n│✺ ᴍᴇᴍʙᴇʀs : *${totalMembers}*\n│✺ ᴍᴇssᴀɢᴇ: *${message}*\n`;
 
         for (let mem of participants) {
             if (!mem.id) continue;

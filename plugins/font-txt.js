@@ -15,13 +15,13 @@ async (conn, mek, m, { from, args, prefix, reply }) => {
 
         if (!id || !text) {
             return reply(
-                `╭─ 「 *\`LIST FANCY\`* 」\nᴇxᴀᴍᴘʟᴇ: .ғᴀɴᴄʏ 10 xᴛʀᴇᴍᴇ-xᴍᴅ\n` +
+                `╭─ 「 *\`LIST FANCY\`* 」\n│ᴇxᴀᴍᴘʟᴇ: .ғᴀɴᴄʏ 10 xᴛʀᴇᴍᴇ-xᴍᴅ\n│` +
                 String.fromCharCode(8206).repeat(4001) + 
                 fancy.list('XTREME XMD', fancy)
             );
         }
 
-        const selectedStyle = fancy[parseInt(id) - 1];
+        const selectedStyle = fancy[parseInt(id) - `│1`];
         if (selectedStyle) {
             return reply(fancy.apply(selectedStyle, text));
         } else {

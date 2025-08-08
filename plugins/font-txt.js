@@ -1,24 +1,34 @@
-const { zokou } = require("../framework/zokou");
-const fancy = require("../commandes/style");
+const { cmd } = require('../command');
+const fancy = require('../commandes/style');
 
-zokou({ nomCom: "fancy", categorie: "Fun", reaction: "💫" }, async (dest, zk, commandeOptions) => {
-    const { arg, repondre, prefixe } = commandeOptions;
-    const id = arg[0]?.match(/\d+/)?.join('');
-    const text = arg.slice(1).join(" ");
-
+cmd({
+    pattern: "fancy",
+    desc: "Apply fancy text styles",
+    category: "fun",
+    react: "💫",
+    filename: __filename
+}, 
+async (conn, mek, m, { from, args, prefix, reply }) => {
     try {
-        if (id === undefined || text === undefined) {
-            return await repondre(`\nExemple : ${prefixe}fancy 10 XTREME-XMD\n` + String.fromCharCode(8206).repeat(4001) + fancy.list('XTREME-XMD', fancy));
+        const id = args[0]?.match(/\d+/)?.join('');
+        const text = args.slice(1).join(" ");
+
+        if (!id || !text) {
+            return reply(
+                `Example: ${prefix}fancy 10 XTREME-XMD\n` +
+                String.fromCharCode(8206).repeat(4001) + 
+                fancy.list('XTREME-XMD', fancy)
+            );
         }
 
         const selectedStyle = fancy[parseInt(id) - 1];
         if (selectedStyle) {
-            return await repondre(fancy.apply(selectedStyle, text));
+            return reply(fancy.apply(selectedStyle, text));
         } else {
-            return await repondre('_Style introuvable :(_');
+            return reply('_Style not found :(_');
         }
     } catch (error) {
         console.error(error);
-        return await repondre('_Une erreur s\'est produite :(_');
+        return reply('_An error occurred :(_');
     }
 });

@@ -1,12 +1,10 @@
-// code by ⿻ ⌜ 𝐊𝐇𝐀𝐍 ⌟⿻⃮͛🇵🇰𖤐
-
 const axios = require("axios");
 const config = require('../config');
 const { cmd } = require('../command');
 
 cmd({
   pattern: "ss",
-  alias: ["ssweb"],
+  alias: ["screenweb"],
   react: "💫",
   desc: "Download screenshot of a given link.",
   category: "other",
@@ -20,25 +18,32 @@ async (conn, mek, m, {
   isBotAdmins, isAdmins, reply 
 }) => {
   if (!q) {
-    return reply("_*ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴜʀʟ ᴛᴏ ᴄᴀᴘᴛᴜʀᴇ ᴀ sᴄʀᴇᴇɴsʜᴏᴛ*_");
+    return reply("براہ کرم اسکرین شاٹ لینے کے لیے ایک لنک فراہم کریں۔");
   }
 
   try {
-    // created by jawad tech 
-    const response = await axios.get(`https://api.davidcyriltech.my.id/ssweb?url=${q}`);
-    const screenshotUrl = response.data.screenshotUrl;
+    const response = await axios.get(`https://api.diioffc.web.id/api/tools/sstab?url=${encodeURIComponent(q)}`);
+    console.log(response.data); // API response check karne ke liye
 
-    // give credit and use
+    const screenshotUrl = response.data.result;
+
+    if (!screenshotUrl) {
+        console.log("Screenshot URL not found in API response.");
+        return reply("اسکرین شاٹ کا URL نہیں ملا۔");
+    }
+
+    console.log("Screenshot URL:", screenshotUrl); // Confirm karte hain URL ko
+
     const imageMessage = {
       image: { url: screenshotUrl },
-      caption: "*ʏᴏᴜʀ sᴄʀᴇᴇɴ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n\n> *_ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ_*",
+      caption: "*📸 WEB SCREENSHOT DOWNLOADER*\n\n> *© Powered By RAHEEM*",
       contextInfo: {
         mentionedJid: [m.sender],
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: '120363418161689316@newsletter',
-          newsletterName: "𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗",
+          newsletterJid: '120363345407274799@newsletter',
+          newsletterName: "RAHEEM XMD",
           serverMessageId: 143,
         },
       },
@@ -46,9 +51,7 @@ async (conn, mek, m, {
 
     await conn.sendMessage(from, imageMessage, { quoted: m });
   } catch (error) {
-    console.error(error);
-    reply("*ғᴀɪʟᴇᴅ ᴛᴏ ᴄᴀᴘᴛᴜʀᴇ ᴛʜᴇ sᴄʀᴇᴇɴsʜᴏᴛ. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ*");
+    console.error("Error:", error);
+    reply("اسکرین شاٹ لینے میں ناکامی۔ براہ کرم دوبارہ کوشش کریں۔");
   }
 });
-
-// ⿻ ⌜ XTREME ⌟⿻⃮͛𖤐

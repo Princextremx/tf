@@ -40,17 +40,17 @@ async (conn, mek, m, { from, participants, reply, isGroup, isAdmins, isCreator, 
         let message = body.slice(body.indexOf(command) + command.length).trim();
         if (!message) message = "ᴀᴛᴛᴇɴᴛɪᴏɴ ᴇᴠᴇʀʏᴏɴᴇ";
 
-        let teks = `╭─ 「 *\`𝐗𝐓𝐑𝐄𝐌𝐄 𝐗𝐌𝐃\`* 」\n│✺ ɢʀᴏᴜᴘ : *${groupName}*\n│✺ ᴍᴇᴍʙᴇʀs : *${totalMembers}*\n│✺ ᴍᴇssᴀɢᴇ: *${message}*\n╰─────────────❍\n\n╭─ 「 *\`𝐗𝐓𝐑𝐄𝐌𝐄 𝐓𝐀𝐆\`* 」\n`;
+        let teks = `╭─ 「 *\`X TAGALL\`* 」\n│✺ ɢʀᴏᴜᴘ : *${groupName}*\n│✺ ᴍᴇᴍʙᴇʀs : *${totalMembers}*\n│✺ ᴍᴇssᴀɢᴇ: *${message}*\n╰─────────────❍\n`;
 
         for (let mem of participants) {
             if (!mem.id) continue;
             teks += `${randomEmoji} @${mem.id.split('@')[0]}\n`;
         }
 
-        teks += "└──❖ 𝐗𝐓𝐑𝐄𝐌𝐄 𝐗𝐌𝐃 ❖──";
+        teks += "╰────────────────❍";
         
          // Send the image along with the message
-        const imageUrl = "https://files.catbox.moe/38jyw3.jpg";  // Replace with your image URL or local image path
+        const imageUrl = "https://files.catbox.moe/07x6o8.jpg";  // Replace with your image URL or local image path
         const imageBuffer = await getBuffer(imageUrl);
 
         conn.sendMessage(from, { 

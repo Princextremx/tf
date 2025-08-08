@@ -1,5 +1,5 @@
 const { cmd } = require('../command');
-const fancy = require('../commandes/style');
+const fancy = require('../lib/style');
 
 cmd({
     pattern: "fancy",

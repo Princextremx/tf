@@ -33,9 +33,6 @@ async (conn, mek, m, { from, args, prefix, reply }) => {
         const selectedStyle = fancy[parseInt(id) - 1];
         if (selectedStyle) {
             return reply(fancy.apply(selectedStyle, text));
-            //send image 
-            await conn.sendMessage(from, {
-      image: { url: 'https://files.catbox.moe/mry39g.jpg' },
         } else {
             return reply('_Style not found :(_');
         }

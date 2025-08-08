@@ -1,6 +1,24 @@
+const { zokou } = require("../framework/zokou");
+const fancy = require("../commandes/style");
 
+zokou({ nomCom: "fancy", categorie: "Fun", reaction: "💫" }, async (dest, zk, commandeOptions) => {
+    const { arg, repondre, prefixe } = commandeOptions;
+    const id = arg[0]?.match(/\d+/)?.join('');
+    const text = arg.slice(1).join(" ");
 
+    try {
+        if (id === undefined || text === undefined) {
+            return await repondre(`\nExemple : ${prefixe}fancy 10 XTREME-XMD\n` + String.fromCharCode(8206).repeat(4001) + fancy.list('XTREME-XMD', fancy));
+        }
 
-
-
-const { cmd } = require('../command'); const axios = require('axios'); cmd({ pattern: "fancy", alias: ['font', "style"], react: '✍️', desc: "Convert text into various fonts.", category: "tools", filename: __filename }, async (conn, mek, m, { from, quoted, body, args, q, reply }) => { try { if (!q) return reply("Please provide text to convert into fonts. Eg .fancy David"); let response = await axios.get('https://www.dark-yasiya-api.site/other/font?text=' + encodeURIComponent(q)); let data = response.data; if (!data.status) return reply("Error fetching fonts. Please try again later."); let fontResults = data.result.map(font => '*' + font.name + ":*\n" + font.result).join("\n\n"); let message = `*FANCY TEXT GENERATOR*:\n\n${fontResults}\n\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*`; await conn.sendMessage(from, { text: message, contextInfo: { mentionedJid: [m.sender], forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363398101781980@newsletter', newsletterName: '𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗', serverMessageId: 143 } } }, { quoted: mek }); } catch (error) { console.error(error); reply("An error occurred while fetching fonts."); } });
+        const selectedStyle = fancy[parseInt(id) - 1];
+        if (selectedStyle) {
+            return await repondre(fancy.apply(selectedStyle, text));
+        } else {
+            return await repondre('_Style introuvable :(_');
+        }
+    } catch (error) {
+        console.error(error);
+        return await repondre('_Une erreur s\'est produite :(_');
+    }
+});

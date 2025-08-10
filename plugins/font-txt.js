@@ -16,7 +16,7 @@ async (conn, mek, m, { from, args, prefix, reply }) => {
         // Si aucun argument → montrer la liste des styles
         if (!args.length) {
             return reply(
-                `╭─ 「 *\`FANCY LIST STYLE\`* 」\n│EXAMPLE: FANCY 10 XTREMEXMD\n│` +
+                `╭─ 「 *\`𝐅𝐀𝐍𝐂𝐘 𝐒𝐓𝐘𝐋𝐄\`* 」\n│EXAMPLE: FANCY 10 XTREMEXMD\n│` +
                 String.fromCharCode(8206).repeat(4001) + 
                 fancy.list('XTREME XMD', fancy)
             );

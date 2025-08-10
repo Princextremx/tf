@@ -30,7 +30,7 @@ cmd(
         if (mime === "imageMessage" || mime === "stickerMessage") {
             let media = await mek.quoted.download();
             let sticker = new Sticker(media, {
-                pack: "𖢗🌹᪳𝐈𝐓𝐒 𝐌𝐄🍀᪳𝐏𝐑𝐈𝐍𝐂𝐄 𝐒𝐈𝐃™🍎᪳𖢗", 
+                pack: pack,"𖢗🌹᪳𝐈𝐓𝐒 𝐌𝐄🍀᪳𝐏𝐑𝐈𝐍𝐂𝐄 𝐒𝐈𝐃™🍎᪳𖢗";
                 type: StickerTypes.FULL,
                 categories: ["🤩", "🎉"],
                 id: "12345",
@@ -60,7 +60,7 @@ cmd(
     async (conn, mek, m, { quoted, args, q, reply, from }) => {
         if (!mek.quoted) return reply(`*_ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ, sɪʀ._*`);
         let mime = mek.quoted.mtype;
-        let pack = Config.STICKER_NAME || `${pushname}`;
+        let pack = Config.STICKER_NAME || "𖢗🌹᪳𝐈𝐓𝐒 𝐌𝐄🍀᪳𝐏𝐑𝐈𝐍𝐂𝐄 𝐒𝐈𝐃™🍎᪳𖢗";
         
         if (mime === "imageMessage" || mime === "stickerMessage") {
             let media = await mek.quoted.download();

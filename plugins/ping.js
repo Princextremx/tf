@@ -61,8 +61,8 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
     try {
         const start = new Date().getTime();
 
-        const reactionEmojis = ['🔥', '🔮', '🌩️', '👻', '🍁', '🐍', '🎋', '🎐', '🪸', '📍', '👑', '🌀', '🪄', '🤩', '❤️', '🇨🇲', '⛔️', '🪅', '🍒', '📉', '🩷', '🧡', '💛', '💙', '💜', '🩵', '🩶', '🖤', '🤍', '🤎', '❤️‍🔥', '❤️‍🩹'];
-        const textEmojis = ['🪀', '🪂', '⚡️', '🚀', '🏎️', '🚁', '🌀', '📟', '🎲', '✨'];
+        const reactionEmojis = ['🔥', '🔮', '💫', '🍹', '🍁', '❇️', '🎋', '🎐', '🪸'];
+        const textEmojis = ['🪀', '🪂', '⚡️', '🚀', '🏎️', '🚁', '🌀', '📟', '✨'];
 
         const reactionEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
         let textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
@@ -81,7 +81,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
         const responseTime = (end - start) / 1000;
         let ping = await conn.sendMessage(from , { text: '*ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴘɪɴɢ...*'  }, { quoted: mek } )
 
-        const text = `*${reactionEmoji} p๏ƞ͛ɠ ${responseTime.toFixed(2)} ɱʂ*`;
+        const text = `*${reactionEmoji} 𝐏๏ƞ͛ɠ ${responseTime.toFixed(2)} 𝐌ʂ*`;
 
         await conn.sendMessage(from, {
             text,

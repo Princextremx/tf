@@ -12,7 +12,7 @@ const Config = require('../config');
 cmd(
     {
         pattern: 'rename',
-        alias: ['s', 'stake'],
+        alias: ['take', 'stake'],
         desc: 'Create a sticker with a custom pack name.',
         category: 'sticker',
         use: '<reply media or URL>',
@@ -30,7 +30,7 @@ cmd(
         if (mime === "imageMessage" || mime === "stickerMessage") {
             let media = await mek.quoted.download();
             let sticker = new Sticker(media, {
-                pack: pack, 
+                pack: `${pushname}`, 
                 type: StickerTypes.FULL,
                 categories: ["🤩", "🎉"],
                 id: "12345",
@@ -49,8 +49,8 @@ cmd(
 
 cmd(
     {
-        pattern: 'take',
-        alias: ['takes', 'stickergif'],
+        pattern: 'sticker',
+        alias: ['s', 'stickergif'],
         desc: 'Create a sticker from an image, video, or URL.',
         category: 'sticker',
         use: '*_<ʀᴇᴘʟʏ ᴍᴇᴅɪᴀ ᴏʀ ᴜʀʟ>_*',
@@ -60,7 +60,7 @@ cmd(
     async (conn, mek, m, { quoted, args, q, reply, from }) => {
         if (!mek.quoted) return reply(`*_ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ, sɪʀ._*`);
         let mime = mek.quoted.mtype;
-        let pack = Config.STICKER_NAME || `${pushname}`;
+        let pack = Config.STICKER_NAME || "${pushname}";
         
         if (mime === "imageMessage" || mime === "stickerMessage") {
             let media = await mek.quoted.download();

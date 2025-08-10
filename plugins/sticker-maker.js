@@ -11,8 +11,8 @@ const Config = require('../config');
 
 cmd(
     {
-        pattern: 'take',
-        alias: ['rename', 'stake'],
+        pattern: 'rename',
+        alias: ['s', 'stake'],
         desc: 'Create a sticker with a custom pack name.',
         category: 'sticker',
         use: '<reply media or URL>',
@@ -49,8 +49,8 @@ cmd(
 
 cmd(
     {
-        pattern: 'sticker',
-        alias: ['s', 'stickergif'],
+        pattern: 'take',
+        alias: ['takes', 'stickergif'],
         desc: 'Create a sticker from an image, video, or URL.',
         category: 'sticker',
         use: '*_<ʀᴇᴘʟʏ ᴍᴇᴅɪᴀ ᴏʀ ᴜʀʟ>_*',
@@ -60,7 +60,7 @@ cmd(
     async (conn, mek, m, { quoted, args, q, reply, from }) => {
         if (!mek.quoted) return reply(`*_ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ, sɪʀ._*`);
         let mime = mek.quoted.mtype;
-        let pack = Config.STICKER_NAME || "𖢗🌹᪳𝐈𝐓𝐒 𝐌𝐄🍀᪳𝐏𝐑𝐈𝐍𝐂𝐄 𝐒𝐈𝐃™🍎᪳𖢗";
+        let pack = Config.STICKER_NAME || `${pushname}`;
         
         if (mime === "imageMessage" || mime === "stickerMessage") {
             let media = await mek.quoted.download();

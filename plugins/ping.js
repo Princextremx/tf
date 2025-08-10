@@ -79,9 +79,9 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
 
         const end = new Date().getTime();
         const responseTime = (end - start) / 1000;
-        let ping = await conn.sendMessage(from , { text: '*𝗫𝗧𝗥𝗘𝗠𝗘-𝗫𝗠𝗗...*'  }, { quoted: mek } )
+        let ping = await conn.sendMessage(from , { text: '*ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴘɪɴɢ...*'  }, { quoted: mek } )
 
-        const text = `*${reactionEmoji} 𝐏๏፝֟ƞ̽g ${ping} 𝐌𝐒*`;
+        const text = `*${reactionEmoji} 𝐏๏፝֟ƞ̽g ${responseTime.toFixed(2)} 𝐌𝐒*`;
 
         await conn.sendMessage(from, {
             text,

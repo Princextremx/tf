@@ -81,7 +81,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
         const responseTime = (end - start) / 1000;
         const message = await conn.sendMessage(from, { text: '*_ᴘɪɴɢ ᴛᴇsᴛ..._*' })
 
-        const text = `*${reactionEmoji} 𝐏๏፝֟ƞ̽g ${responseTime.toFixed(2)} 𝐌𝐒*`;
+        const text = `*${reactionEmoji} 𝐏๏፝֟ƞ̽g ${ping} 𝐌𝐒*`;
 
         await conn.sendMessage(from, {
             text,

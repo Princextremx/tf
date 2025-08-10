@@ -6,7 +6,7 @@ cmd({
     pattern: "write",
     alias: [],
     desc: "Add text to an image, video, or sticker",
-    category: "conversion",
+    category: "convert",
     react: "✍️",
     filename: __filename
 }, async (conn, mek, m, { quoted, args, repondre }) => {

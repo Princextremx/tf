@@ -84,7 +84,7 @@ async (conn, mek, m, { from, reply }) => {
         const usage = cmd.pattern.split('|')[0];
         menuText += `\n*│✘ ${config.PREFIX}${toSmallCaps(usage)}*`;
       });
-      menuText += `\n*╰──────────────٭──➢*`;
+      menuText += `\n*╰──────────────⭑━➤*`;
     }
 
     const selectedStyle = menuText;

@@ -30,7 +30,7 @@ cmd(
         if (mime === "imageMessage" || mime === "stickerMessage") {
             let media = await mek.quoted.download();
             let sticker = new Sticker(media, {
-                pack: pack,"𖢗🌹᪳𝐈𝐓𝐒 𝐌𝐄🍀᪳𝐏𝐑𝐈𝐍𝐂𝐄 𝐒𝐈𝐃™🍎᪳𖢗";
+                pack: pack,
                 type: StickerTypes.FULL,
                 categories: ["🤩", "🎉"],
                 id: "12345",

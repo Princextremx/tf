@@ -20,7 +20,7 @@ cmd({
     const mimeType = (quotedMsg.msg || quotedMsg).mimetype || '';
     
     if (!mimeType || !mimeType.startsWith('image/')) {
-      return reply("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ ғɪʟᴇ (ᴊᴘᴇɢ/ᴘɴɢ)");
+      return reply("*ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ ғɪʟᴇ (ᴊᴘᴇɢ/ᴘɴɢ)*");
     }
 
     // Download the media
@@ -31,7 +31,7 @@ cmd({
     if (mimeType.includes('image/jpeg')) extension = '.jpg';
     else if (mimeType.includes('image/png')) extension = '.png';
     else {
-      return reply("ᴜɴᴇɴʜᴀɴᴄɪɴɢ ɪᴍᴀɢᴇ ғᴏʀᴍᴀᴛ. ᴘʟᴇᴀsᴇ ᴜsᴇ ᴊᴘᴇɢ ᴏʀ ᴘɴɢ");
+      return reply("*ᴜɴᴇɴʜᴀɴᴄɪɴɢ ɪᴍᴀɢᴇ ғᴏʀᴍᴀᴛ. ᴘʟᴇᴀsᴇ ᴜsᴇ ᴊᴘᴇɢ ᴏʀ ᴘɴɢ*");
     }
 
     // Create temp file
@@ -71,10 +71,10 @@ cmd({
     fs.writeFileSync(outputPath, response.data);
 
     // Send the enhanced image with loading message
-    await reply("🔄 ᴇɴʜᴀɴᴄɪɴɢ ɪᴍᴀɢᴇ ǫᴜᴀʟɪᴛʏ...");
+    await reply("*🔄 ᴇɴʜᴀɴᴄɪɴɢ ɪᴍᴀɢᴇ ǫᴜᴀʟɪᴛʏ...*");
     await client.sendMessage(message.chat, {
       image: fs.readFileSync(outputPath),
-      caption: "*✅ ɪᴍᴀɢᴇ ᴇɴʜᴀɴᴄᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ!*\n\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ",
+      caption: "*✅ ɪᴍᴀɢᴇ ᴇɴʜᴀɴᴄᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ!*\n\n> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀɪɴᴄᴇ xᴛʀᴇᴍᴇ*",
     }, { quoted: message });
 
     // Clean up

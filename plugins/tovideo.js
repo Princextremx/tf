@@ -43,7 +43,7 @@ cmd({
     pattern: "stickertovideo",
     alias: ["tovideo"],
     desc: "Convert a sticker to MP4 video",
-    category: "conversion",
+    category: "convert",
     react: "🎞️",
     filename: __filename
 }, async (conn, mek, m, { quoted, repondre }) => {

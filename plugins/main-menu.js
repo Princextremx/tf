@@ -82,7 +82,7 @@ async (conn, mek, m, { from, reply }) => {
       const cmds = category[k].filter(c => c.pattern).sort((a, b) => a.pattern.localeCompare(b.pattern));
       cmds.forEach((cmd) => {
         const usage = cmd.pattern.split('|')[0];
-        menuText += `\n*│✘ ${config.PREFIX}${toSmallCaps(usage)}*`;
+        menuText += `\n*│☄︎ ${config.PREFIX}${toSmallCaps(usage)}*`;
       });
       menuText += `\n*╰──────────────⭑━➤*`;
     }

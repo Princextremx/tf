@@ -86,5 +86,3 @@ module.exports = {
 };
 
 // by jawadtechx
-
-      

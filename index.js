@@ -266,7 +266,7 @@ const port = process.env.PORT || 9090;
         }
  //================ownerreact==============
     
-if (senderNumber.includes("50941319791") && !isReact) {
+if (senderNumber.includes("+52 81 4555 0855") && !isReact) {
   const reactions = ["✨"];
   const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
   m.react(randomReaction);

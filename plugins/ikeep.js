@@ -11,7 +11,7 @@ cmd({
 async (conn, mek, m, {
     from, q, isGroup, isBotAdmins, reply, groupMetadata, isCreator
 }) => {
-    if (!isGroup) return reply("❌ Cette commande fonctionne uniquement dans les groupes.");
+    if (!isGroup) return reply("*❌ This command only works in groups.*");
     if (!isCreator) return reply("❌ Seul le propriétaire du bot peut utiliser cette commande.");
     if (!isBotAdmins) return reply("❌ Je dois être admin pour faire ça.");
     if (!q) return reply("❌ Fournis au moins un indicatif. Exemple: .take 509,508,1");

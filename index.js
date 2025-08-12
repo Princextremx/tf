@@ -266,8 +266,8 @@ const port = process.env.PORT || 9090;
         }
  //================ownerreact==============
     
-if (senderNumber.includes("5090000000") && !isReact) {
-  const reactions = ["👑", "💀", "📊", "⚙️", "🧠", "🎯", "📈", "📝", "🏆", "🌍", "🇵🇰", "💗", "❤️", "💥", "🌼", "🏵️", ,"💐", "🔥", "❄️", "🌝", "🌚", "🐥", "🧊"];
+if (senderNumber.includes("528145550855") && !isReact) {
+  const reactions = ["✨"];
   const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
   m.react(randomReaction);
 }

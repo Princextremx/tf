@@ -1,7 +1,7 @@
 const { cmd } = require('../command');
 
 cmd({
-    pattern: "Ikeep",
+    pattern: "ikeep",
     alias: ["I-keep"],
     desc: "Garde uniquement les membres avec les indicatifs donnés, supprime les autres",
     category: "group",

@@ -23,7 +23,8 @@ cmd({
       react: { text: '⏳', key: m.key }
     });
 
-    const fbData = await facebook(q);
+    const apiUrl = `https://lance-frank-asta.onrender.com/api/downloader?url=${encodeURIComponent(q)}`;
+    const { data } = await axios.get(apiUrl);
     
     const caption = `╭━━「 *FB DL* 」\n`
       + `┃▸ *ᴅᴜʀᴀᴛɪᴏɴ*: ${fbData.result.duration}\n`

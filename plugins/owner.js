@@ -32,14 +32,14 @@ async (conn, mek, m, { from }) => {
 
         // Send the owner contact message with image and audio
         await conn.sendMessage(from, {
-            image: { url: 'https://files.catbox.moe/uykxm4.jpg' }, // Image URL from your request
+            image: { url: 'https://files.catbox.moe/4goejx.jpg' }, // Image URL from your request
             caption: `
-╭┈┈❍ XTREME XMD ❍
+╭┈┈❍ *XTREME XMD* ❍
 ┊• *Here are the user details*
 ┊• *ɴᴀᴍᴇ* : ${ownerName}
 ┊• *ɴᴜᴍʙᴇʀ*: ${ownerNumber}
 ┆• *ᴠᴇʀsɪᴏɴ*: 2.0.0
-╰┈┈┈┈┈┈┈⭘
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⭘
 > sᴛᴀʏ ᴄᴏɴɴᴇᴄᴛᴇᴅ ғᴏʀ ғᴀɴᴛᴀsᴛɪᴄ ᴜᴘᴅᴀᴛᴇs!`, // Display the owner's details
             contextInfo: {
                 mentionedJid: [`${ownerNumber.replace('+', '')}@s.whatsapp.net`], 

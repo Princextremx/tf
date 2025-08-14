@@ -1,4 +1,3 @@
-m
 
 
 
@@ -39,7 +38,7 @@ async (conn, mek, m, { from }) => {
 ┊• *Here are the user details*
 ┊• *ɴᴀᴍᴇ* : ${ownerName}
 ┊• *ɴᴜᴍʙᴇʀ*: ${ownerNumber}
-┆• *ᴠᴇʀsɪᴏɴ*: ${config.version}
+┆• *ᴠᴇʀsɪᴏɴ*: 2.0.0
 ╰┈┈┈┈┈┈┈⭘
 > sᴛᴀʏ ᴄᴏɴɴᴇᴄᴛᴇᴅ ғᴏʀ ғᴀɴᴛᴀsᴛɪᴄ ᴜᴘᴅᴀᴛᴇs!`, // Display the owner's details
             contextInfo: {

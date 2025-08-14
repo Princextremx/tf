@@ -13,8 +13,6 @@ cmd({
 
   alias: ["prefix"],
 
-  react: "🔧",
-
   desc: "Change the bot's command prefix.",
 
   category: "settings",

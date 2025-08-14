@@ -7,7 +7,7 @@ const config = require('../config');
 
 const { setPrefix } = require('../lib/prefix');
 
-malvin({
+cmd({
 
   pattern: "setprefix",
 

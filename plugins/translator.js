@@ -10,7 +10,7 @@ cmd({
     pattern: "trt",
     alias: ["translate"],
     desc: "🌍 Translate text between languages",
-    react: "⚡",
+    react: "☑️",
     category: "other",
     filename: __filename
 },
@@ -27,16 +27,7 @@ async (conn, mek, m, { from, q, reply }) => {
         const response = await axios.get(url);
         const translation = response.data.responseData.translatedText;
 
-        const translationMessage = `
-🌍 *XTREME XMD TRANSLATION* 🌍
-
-🔤 *Original*: ${textToTranslate}
-
-🔠 *Translated*: ${translation}
-
-🌐 *Language*: ${targetLang.toUpperCase()}
-
-*ALL COUNTRY BY CRAZY〽️*`;
+        const translationMessage = `*${translation}*`;
 
         return reply(translationMessage);
     } catch (e) {

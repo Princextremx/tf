@@ -1,34 +1,19 @@
-const { cmd } = require("../command");
 const fs = require("fs");
 const path = require("path");
 const { jidNormalizedUser } = require("baileys");
+const { cmd } = require("../command");
 
-const devFilePath = path.join(__dirname, "../lib/sudo.json");
-let devList = [];
+const SUDO_PATH = path.join(__dirname, "../lib/sudo.json");
 
-// Charger la liste sudo
-try {
-  if (fs.existsSync(devFilePath)) {
-    const rawList = JSON.parse(fs.readFileSync(devFilePath, "utf-8"));
-    devList = rawList
-      .map(num => {
-        const jid = num.replace(/[^0-9@s.whatsapp.net]/g, "");
-        return jid.includes("@s.whatsapp.net")
-          ? jid
-          : jid + "@s.whatsapp.net";
-      })
-      .filter(u => u.match(/^\d+@s\.whatsapp\.net$/));
+// 📂 Vérifie et initialise le fichier sudo.json
+const ensureSudoFile = () => {
+  if (!fs.existsSync(SUDO_PATH)) {
+    fs.writeFileSync(SUDO_PATH, JSON.stringify([]));
   }
-} catch (err) {
-  console.error("Error loading dev list:", err);
-  devList = [];
-}
-fs.writeFileSync(devFilePath, JSON.stringify(devList, null, 2));
-
-const saveDevList = () => {
-  fs.writeFileSync(devFilePath, JSON.stringify(devList, null, 2));
 };
+ensureSudoFile();
 
+// 🔎 Fonction pour identifier le JID cible
 const getTargetJid = (m, args) => {
   if (m.mentionedJid && m.mentionedJid.length > 0) {
     return jidNormalizedUser(m.mentionedJid[0]);
@@ -37,8 +22,6 @@ const getTargetJid = (m, args) => {
   } else if (args[0]) {
     const num = args[0].replace(/\D/g, "");
     return jidNormalizedUser(num + "@s.whatsapp.net");
-  } else if (m.key?.participant) {
-    return jidNormalizedUser(m.key.participant);
   }
   return null;
 };
@@ -46,120 +29,97 @@ const getTargetJid = (m, args) => {
 // ➕ setsudo
 cmd({
   pattern: "setsudo",
-  alias: ["sudoadd"],
-  desc: "Add a user to the sudo list",
+  alias: ["addsudo", "sudoadd"],
+  desc: "Add a user to sudo list",
   category: "owner",
+  react: "😇",
   filename: __filename
-}, async (conn, mek, m, { args, reply, isPatron, isGroup }) => {
-  if (!isPatron) return reply("*📛 ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ʀᴇsᴛʀɪᴄᴛᴇᴅ ᴛᴏ ᴏᴡɴᴇʀs ᴏɴʟʏ.*");
-  if (isGroup) return reply("*❗ ᴘʟᴇᴀsᴇ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪɴ ᴛʜᴇ `ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ` ᴏғ ᴛʜᴇ ᴘᴇʀsᴏɴ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴀᴅᴅ.*");
+}, async (conn, mek, m, { from, args, reply, isCreator }) => {
+  try {
+    if (!isCreator) return reply("_📛 This command is restricted to the owner._");
 
-  await conn.sendMessage(m.key.remoteJid, { react: { text: "➕", key: m.key } });
+    let target = getTargetJid(m, args);
+    if (!target) return reply("❌ Please reply, mention or provide a valid number.");
 
-  let target = getTargetJid(m, args);
-  if (!target) return reply("*_ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ, ᴍᴇɴᴛɪᴏɴ ᴏʀ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴠᴀʟɪᴅ ɴᴜᴍʙᴇʀ._*");
+    let sudoList = JSON.parse(fs.readFileSync(SUDO_PATH, "utf-8"));
 
-  if (devList.includes(target)) {
-    return conn.sendMessage(m.chat, {
-      text: "@" + target.split("@")[0] + " *ɪs ᴀʟʀᴇᴀᴅʏ ɪɴ ᴛʜᴇ sᴜᴅᴏ ʟɪsᴛ.*",
-      mentions: [target]
-    }, { quoted: m });
+    if (sudoList.includes(target)) {
+      return reply("⚠️ @" + target.split("@")[0] + " is already a sudo user.", { mentions: [target] });
+    }
+
+    sudoList.push(target);
+    fs.writeFileSync(SUDO_PATH, JSON.stringify([...new Set(sudoList)], null, 2));
+
+    await conn.sendMessage(from, {
+      image: { url: "https://files.catbox.moe/vtbi4a.jpg" },
+      caption: "✅ @" + target.split("@")[0] + " has been *added* to the sudo list."
+    }, { quoted: mek, mentions: [target] });
+  } catch (err) {
+    console.error(err);
+    reply("❌ Error: " + err.message);
   }
-
-  devList.push(target);
-  saveDevList();
-
-  await conn.sendMessage(m.chat, {
-    text: "✅ @" + target.split("@")[0] + " *ʜᴀs ʙᴇᴇɴ `ᴀᴅᴅᴇᴅ` ᴛᴏ ᴛʜᴇ sᴜᴅᴏ ʟɪsᴛ.*",
-    mentions: [target]
-  }, { quoted: m });
 });
 
 // ⤵️ delsudo
 cmd({
   pattern: "delsudo",
-  alias: ["sudodel"],
-  desc: "Remove a user from the sudo list",
+  alias: ["sudodel", "delowner"],
+  desc: "Remove a user from sudo list",
   category: "owner",
+  react: "🫩",
   filename: __filename
-}, async (conn, mek, m, { args, reply, isPatron, isGroup }) => {
-  if (!isPatron) return reply("*📛 ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ʀᴇsᴛʀɪᴄᴛᴇᴅ ᴛᴏ ᴏᴡɴᴇʀs ᴏɴʟʏ.*");
-  if (isGroup) return reply("*❗ ᴘʟᴇᴀsᴇ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪɴ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ.*");
+}, async (conn, mek, m, { from, args, reply, isCreator }) => {
+  try {
+    if (!isCreator) return reply("_📛 This command is restricted to the owner._");
 
-  await conn.sendMessage(m.key.remoteJid, { react: { text: "⤵️", key: m.key } });
+    let target = getTargetJid(m, args);
+    if (!target) return reply("❌ Please reply, mention or provide a valid number.");
 
-  let target = getTargetJid(m, args);
-  if (!target) return reply("*_ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ, ᴍᴇɴᴛɪᴏɴ ᴏʀ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴠᴀʟɪᴅ ɴᴜᴍʙᴇʀ._*");
+    let sudoList = JSON.parse(fs.readFileSync(SUDO_PATH, "utf-8"));
 
-  if (!devList.includes(target)) {
-    return conn.sendMessage(m.chat, {
-      text: "@" + target.split("@")[0] + " *ɪs ɴᴏᴛ ɪɴ ᴛʜᴇ sᴜᴅᴏ ʟɪsᴛ.*",
-      mentions: [target]
-    }, { quoted: m });
+    if (!sudoList.includes(target)) {
+      return reply("⚠️ @" + target.split("@")[0] + " is not in the sudo list.", { mentions: [target] });
+    }
+
+    sudoList = sudoList.filter(u => u !== target);
+    fs.writeFileSync(SUDO_PATH, JSON.stringify(sudoList, null, 2));
+
+    await conn.sendMessage(from, {
+      image: { url: "https://files.catbox.moe/ee7do3.jpg" },
+      caption: "✅ @" + target.split("@")[0] + " has been *removed* from the sudo list."
+    }, { quoted: mek, mentions: [target] });
+  } catch (err) {
+    console.error(err);
+    reply("❌ Error: " + err.message);
   }
-
-  devList = devList.filter(u => u !== target);
-  saveDevList();
-
-  await conn.sendMessage(m.chat, {
-    text: "✅ @" + target.split("@")[0] + " *ʜᴀs ʙᴇᴇɴ `ʀᴇᴍᴏᴠᴇᴅ` ғʀᴏᴍ ᴛʜᴇ sᴜᴅᴏ ʟɪsᴛ.*",
-    mentions: [target]
-  }, { quoted: m });
 });
 
 // 📋 listsudo
 cmd({
   pattern: "listsudo",
-  alias: ["sudolist"],
+  alias: ["sudolist", "listowner"],
   desc: "List all sudo users",
   category: "owner",
+  react: "📋",
   filename: __filename
-}, async (conn, mek, m, { reply, isPatron }) => {
-  if (!isPatron) return reply("*📛 ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ʀᴇsᴛʀɪᴄᴛᴇᴅ ᴛᴏ ᴏᴡɴᴇʀs ᴏɴʟʏ.*");
+}, async (conn, mek, m, { from, reply, isCreator }) => {
+  try {
+    if (!isCreator) return reply("_📛 This command is restricted to the owner._");
 
-  await conn.sendMessage(m.key.remoteJid, { react: { text: "📋", key: m.key } });
+    let sudoList = JSON.parse(fs.readFileSync(SUDO_PATH, "utf-8"));
+    sudoList = [...new Set(sudoList)];
 
-  if (devList.length === 0) return reply("*ɴᴏ sᴜᴅᴏ ᴜsᴇʀs ғᴏᴜɴᴅ.*");
+    if (sudoList.length === 0) return reply("❌ No sudo users found.");
 
-  const mentions = [];
-  const list = devList.map((u, i) => {
-    mentions.push(u);
-    return `${i + 1}. @${u.split("@")[0]}`;
-  }).join("\n");
+    let list = sudoList.map((u, i) => `${i + 1}. @${u.split("@")[0]}`).join("\n");
 
-  await conn.sendMessage(m.chat, {
-    text: "*📄 xᴛʀᴇᴍᴇxᴍᴅ/sᴜᴅᴏ ᴜsᴇʀs ʟɪsᴛ:*\n" + list,
-    mentions
-  }, { quoted: m });
+    await conn.sendMessage(from, {
+      image: { url: "https://files.catbox.moe/vz98kd.jpg" },
+      caption: "*🤴 List of Sudo Users:*\n\n" + list,
+      mentions: sudoList
+    }, { quoted: mek });
+  } catch (err) {
+    console.error(err);
+    reply("❌ Error: " + err.message);
+  }
 });
-
-// Vérification créateur
-let udp = null;
-function setUdp(num) { udp = num; }
-
-const jawad = ["2348025532222", "528145550855", "2348133729715"];
-const extraCreators = [
-  ...jawad.map(num => num.includes("@s.whatsapp.net") ? num : num + "@s.whatsapp.net"),
-  ...devList
-];
-
-function isCreator(jid, user) {
-  if (!jid || !user?.user?.id) return false;
-
-  const normJid = jidNormalizedUser(user.user.id);
-  const altJid = user.user.lid ? jidNormalizedUser(user.user.lid) : null;
-  const base = jid.replace(/@(s\.whatsapp\.net|lid)$/, "");
-  const jidS = base + "@s.whatsapp.net";
-  const jidL = base + "@lid";
-
-  const isSelf = (jidS === normJid) || (altJid && [jidS, jidL].includes(altJid));
-  if (isSelf) return true;
-
-  const inCreators = [base, jidS, jidL].some(x => extraCreators.includes(x));
-  const inDevList = [base, jidS, jidL].some(x => devList.includes(x));
-  const isUdp = udp !== null && base === udp;
-
-  return isSelf || inCreators || inDevList || isUdp;
-}
-
-module.exports = { isCreator, setUdp };

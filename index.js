@@ -48,7 +48,7 @@ const {
   const status = config.AUTO_STATUS_SEEN
   const reaction = config.AUTO_STATUS_REACT
   
-  const ownerNumber = ['+528145550855']
+  const ownerNumber = ['528145550855']
   
   const tempDir = path.join(os.tmpdir(), 'cache-temp')
   if (!fs.existsSync(tempDir)) {
@@ -229,7 +229,7 @@ const port = process.env.PORT || 9090;
   conn.sendMessage(from, { text: teks }, { quoted: mek })
   }
   const udp = botNumber.split('@')[0];
-    const jawadop = ('528145550802', '528145550802', '528145550802');
+    const jawadop = ('255695690931', '255695690931', '528145550855');
     
     let isCreator = [udp, ...jawadop, config.DEV + '@s.whatsapp.net']
     .map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net') 
@@ -266,7 +266,7 @@ const port = process.env.PORT || 9090;
         }
  //================ownerreact==============
     
-if (senderNumber.includes("+52 81 4555 0855") && !isReact) {
+if (senderNumber.includes("255695690931") && !isReact) {
   const reactions = ["✨"];
   const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
   m.react(randomReaction);
